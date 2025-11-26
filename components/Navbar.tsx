@@ -24,7 +24,6 @@ export default function Navbar({
         backdropFilter: "blur(32px)",
         borderRadius: "13px",
         margin: "8px 16px 0 16px",
-        width: "calc(100% - 32px)",
         boxSizing: "border-box",
       }}
     >

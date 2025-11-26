@@ -15,7 +15,8 @@ export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeService, setActiveService] = useState(1);
-  const sectionRef = React.useRef<HTMLElement>(null);
+
+  // Note: Ensure your TS config allows this pattern, or define refs individually.
   const serviceRefs: { [key: number]: React.RefObject<HTMLDivElement> } = {
     1: React.useRef(null),
     2: React.useRef(null),
@@ -120,51 +121,53 @@ export default function HomePage() {
           </div>
 
           {/* 3. Main Content */}
-          <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-16 max-w-[1600px] mx-auto mt-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
-              {/* Left Column */}
-              <div className="space-y-4">
-                <div className="flex items-center gap-2">
-                  <span className="w-1 h-1 bg-white rounded-full"></span>
-                  <p className="text-xs uppercase tracking-[0.2em] text-white/80">
-                    Scivyt Introduction
-                  </p>
+          <div className="relative z-10 h-full flex flex-col justify-center w-full px-6 md:px-8 mt-16">
+            <div className="max-w-7xl mx-auto w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+                {/* Left Column */}
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1 h-1 bg-white rounded-full"></span>
+                    <p className="text-xs uppercase tracking-[0.2em] text-white/80">
+                      Scivyt Introduction
+                    </p>
+                  </div>
+
+                  <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-tight">
+                    Lorem Ipsum Lorem <br />
+                    Lorem Ipsum
+                  </h1>
                 </div>
 
-                <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-tight">
-                  Lorem Ipsum Lorem <br />
-                  Lorem Ipsum
-                </h1>
-              </div>
+                {/* Right Column */}
+                <div className="space-y-8 lg:pl-12">
+                  <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-md">
+                    Scivyt is a platform where you can benefit Lorem ipsum dolor
+                    sit amet, consectetuer adipiscing elit. Aenean commodo
+                    ligula eget dolor.
+                  </p>
 
-              {/* Right Column */}
-              <div className="space-y-8 lg:pl-12">
-                <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-md">
-                  Scivyt is a platform where you can benefit Lorem ipsum dolor
-                  sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-                  eget dolor.
-                </p>
+                  <div className="flex flex-wrap items-center gap-4">
+                    {/* View Products */}
+                    <button className="bg-white text-black px-8 py-3 rounded-full font-medium text-sm hover:bg-gray-100 transition">
+                      View Products
+                    </button>
 
-                <div className="flex flex-wrap items-center gap-4">
-                  {/* View Products */}
-                  <button className="bg-white text-black px-8 py-3 rounded-full font-medium text-sm hover:bg-gray-100 transition">
-                    View Products
-                  </button>
-
-                  {/* Book a Call */}
-                  <button className="group flex items-center gap-3 bg-black/40 backdrop-blur-sm border border-white/10 pl-2 pr-6 py-2 rounded-full hover:bg-black/60 transition cursor-pointer">
-                    <div className="relative">
-                      <img
-                        src="https://randomuser.me/api/portraits/men/32.jpg"
-                        alt="Agent"
-                        className="w-8 h-8 rounded-full border border-white/20"
-                      />
-                      <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-black rounded-full"></span>
-                    </div>
-                    <span className="text-sm text-white font-medium">
-                      Book a call
-                    </span>
-                  </button>
+                    {/* Book a Call */}
+                    <button className="group flex items-center gap-3 bg-black/40 backdrop-blur-sm border border-white/10 pl-2 pr-6 py-2 rounded-full hover:bg-black/60 transition cursor-pointer">
+                      <div className="relative">
+                        <img
+                          src="https://randomuser.me/api/portraits/men/32.jpg"
+                          alt="Agent"
+                          className="w-8 h-8 rounded-full border border-white/20"
+                        />
+                        <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-black rounded-full"></span>
+                      </div>
+                      <span className="text-sm text-white font-medium">
+                        Book a call
+                      </span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -172,8 +175,8 @@ export default function HomePage() {
         </section>
 
         {/* Introduction / As Seen In */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-6">
+        <section className="py-24 bg-white w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-serif leading-tight mb-8 text-slate-900">
                 Bring the capabilities of your large scale enterprise to the
@@ -212,36 +215,44 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Dark Vertical Showcase Section */}
-        <section
-          ref={sectionRef}
-          className="bg-[#0a0a0a] text-white py-32 relative"
-        >
-          <div className="container mx-auto px-6">
+        {/* Dark Services Section */}
+        <section className="bg-[#0a0a0a] text-white py-24 md:py-32 relative w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div className="flex flex-col lg:flex-row gap-12">
+              {/* Sticky Sidebar (Desktop Only) */}
               <div className="lg:w-1/4 hidden lg:block">
-                <div className="sticky top-24 space-y-6">
-                  <div className="text-xs uppercase tracking-widest text-gray-500 mb-4">
+                <div className="sticky top-32 space-y-8 h-fit">
+                  <div className="text-xs uppercase tracking-widest text-gray-500 font-semibold">
                     Our Services
                   </div>
-                  <ul className="space-y-4 text-lg font-light text-gray-500">
+                  <ul className="space-y-6 text-2xl font-light text-gray-600">
                     {services.map((service) => (
                       <li
                         key={service.id}
                         onClick={() => scrollToService(service.id)}
-                        className={`cursor-pointer pl-4 border-l-2 transition-all duration-300 ${
+                        className={`cursor-pointer transition-all duration-300 flex items-center gap-4 ${
                           activeService === service.id
-                            ? "text-white font-medium border-l-white"
-                            : "hover:text-white border-l-transparent"
+                            ? "text-white scale-105 origin-left"
+                            : "hover:text-gray-400"
                         }`}
                       >
-                        0{service.id}. {service.title}
+                        <span
+                          className={`text-sm font-mono ${
+                            activeService === service.id
+                              ? "text-blue-500"
+                              : "opacity-0"
+                          }`}
+                        >
+                          0{service.id}
+                        </span>
+                        {service.title}
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
 
+              {/* Vertical Stack (Mobile & Desktop Content) */}
               <div className="lg:w-3/4 space-y-32">
                 {services.map((service, index) => (
                   <div
@@ -283,58 +294,62 @@ export default function HomePage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-6">
+        <section className="py-24 bg-white text-slate-900 w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
                 <div className="mb-12">
-                  <h2 className="text-4xl md:text-5xl font-serif leading-tight mb-6">
+                  <h2 className="text-4xl md:text-6xl font-serif leading-[1.1] mb-8">
                     Measuring success by results, not just effort.
                   </h2>
-                  <p className="text-gray-500 text-lg leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam.
+                  <p className="text-slate-500 text-lg leading-relaxed mb-8">
+                    We believe in transparency and measurable outcomes. Our
+                    track record speaks for itself, delivering consistent value
+                    across industries and borders.
                   </p>
                   <a
                     href="#"
-                    className="inline-block mt-6 text-black underline decoration-1 underline-offset-4 hover:text-gray-600"
+                    className="inline-flex items-center gap-2 text-black font-semibold border-b-2 border-black pb-1 hover:opacity-70 transition"
                   >
-                    Read our impact report
+                    Read our impact report <ArrowRight size={16} />
                   </a>
                 </div>
 
-                <div className="grid grid-cols-2 gap-8">
-                  <div>
-                    <div className="text-5xl font-serif mb-2">50+</div>
-                    <div className="text-sm text-gray-500 uppercase tracking-wide">
+                <div className="grid grid-cols-2 gap-12">
+                  <div className="border-l-2 border-slate-200 pl-6">
+                    <div className="text-5xl md:text-6xl font-serif mb-2">
+                      50+
+                    </div>
+                    <div className="text-xs font-bold uppercase tracking-widest text-slate-400">
                       Global Clients
                     </div>
-                    <div className="text-xs text-gray-400 mt-2">
-                      Across 12 countries
-                    </div>
                   </div>
-                  <div>
-                    <div className="text-5xl font-serif mb-2">1500+</div>
-                    <div className="text-sm text-gray-500 uppercase tracking-wide">
-                      Projects Delivered
+                  <div className="border-l-2 border-slate-200 pl-6">
+                    <div className="text-5xl md:text-6xl font-serif mb-2">
+                      1.5k+
                     </div>
-                    <div className="text-xs text-gray-400 mt-2">
-                      On time & budget
+                    <div className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                      Projects Delivered
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="h-[600px] bg-gray-100 rounded-lg overflow-hidden relative">
-                <div className="w-full h-full bg-gray-200"></div>
+              {/* Stats Visual/Image */}
+              <div className="h-[500px] md:h-[600px] bg-gray-100 rounded-2xl overflow-hidden relative shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+                  alt="Stats Graph"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-slate-900/10"></div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Parallax/Quote Section */}
-        <section className="relative py-32 bg-[#1a1a1a] overflow-hidden">
+        <section className="relative py-32 bg-[#1a1a1a] overflow-hidden w-full">
           {/* Background with blur */}
           <div className="absolute inset-0 z-0">
             <img
@@ -344,7 +359,7 @@ export default function HomePage() {
             />
           </div>
 
-          <div className="container relative z-10 mx-auto px-6">
+          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-white/80 mb-6">
               <span className="w-1.5 h-1.5 bg-white rounded-full"></span>{" "}
               Successful Campaigns
@@ -375,7 +390,7 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="p-8 md:p-12 flex flex-col justify-between bg-[#151515] text-white">
+                <div className="p-6 md:p-8 lg:p-12 flex flex-col justify-between bg-[#151515] text-white">
                   <div>
                     <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-gray-500 mb-6">
                       <span className="w-1 h-1 bg-white rounded-full"></span>{" "}
@@ -410,8 +425,8 @@ export default function HomePage() {
         </section>
 
         {/* Contact Section */}
-        <section className="bg-white py-24">
-          <div className="container mx-auto px-6">
+        <section className="bg-white py-24 w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div className="grid lg:grid-cols-2 gap-16">
               <div>
                 <h2 className="text-4xl md:text-6xl font-serif mb-8 text-slate-900">

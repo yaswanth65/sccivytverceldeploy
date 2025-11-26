@@ -29,8 +29,8 @@ export default function ProductDetailsPage() {
 
       <main>
         {/* Product Detail Header */}
-        <section className="pt-32 pb-16 md:pt-48 bg-white text-center">
-          <div className="container mx-auto px-6">
+        <section className="pt-32 pb-16 md:pt-48 bg-white text-center w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <h1 className="text-5xl md:text-7xl font-serif leading-tight mb-6 text-slate-900">
               Venus Education Platform
             </h1>
@@ -48,8 +48,8 @@ export default function ProductDetailsPage() {
         </section>
 
         {/* Info Strip */}
-        <section className="py-12 border-b border-gray-100">
-          <div className="container mx-auto px-6">
+        <section className="py-12 border-b border-gray-100 w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div>
                 <div className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">
@@ -80,8 +80,8 @@ export default function ProductDetailsPage() {
         </section>
 
         {/* Secondary Hero/Content */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-6">
+        <section className="py-24 bg-white w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-serif mb-6">
                 Lorem Ipsum Lorem Ipsum
@@ -172,8 +172,8 @@ export default function ProductDetailsPage() {
         </section>
 
         {/* Related Products */}
-        <section className="py-24 bg-[#fffcf7]">
-          <div className="container mx-auto px-6">
+        <section className="py-24 bg-[#fffcf7] w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <h3 className="text-3xl font-serif mb-12">Our Products</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[1, 2, 3].map((i) => (
@@ -190,8 +190,8 @@ export default function ProductDetailsPage() {
         </section>
 
         {/* Contact Section */}
-        <section className="bg-[#F5F5F0] py-24">
-          <div className="container mx-auto px-6">
+        <section className="bg-[#F5F5F0] py-24 w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div className="grid lg:grid-cols-2 gap-16">
               <div>
                 <h2 className="text-4xl md:text-6xl font-serif mb-8 text-slate-900">

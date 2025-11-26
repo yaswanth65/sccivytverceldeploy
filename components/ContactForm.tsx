@@ -2,8 +2,8 @@
 
 export default function ContactForm() {
   return (
-    <div className="bg-[#F5F5F0] p-8 md:p-12 rounded-lg shadow-sm border border-gray-100">
-      <div className="flex justify-between items-center mb-8">
+    <div className="w-full bg-[#F5F5F0] p-6 md:p-8 lg:p-12 rounded-lg shadow-sm border border-gray-100 box-border">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
         <h3 className="text-xl font-medium">Get in touch</h3>
         <span className="text-sm text-gray-400">* Required fields</span>
       </div>

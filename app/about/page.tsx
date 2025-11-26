@@ -29,9 +29,9 @@ export default function AboutPage() {
 
       <main>
         {/* About Hero */}
-        <section className="h-screen flex flex-col bg-white pt-20">
-          <div className="flex-1 flex flex-col w-full px-4 md:px-6 py-6">
-            <div className="max-w-4xl mx-auto text-center mb-6">
+        <section className="h-screen flex flex-col bg-white pt-20 w-full">
+          <div className="flex-1 flex flex-col w-full px-6 md:px-8 py-6">
+            <div className="max-w-4xl mx-auto w-full text-center mb-6">
               <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">
                 About Us
               </div>
@@ -81,8 +81,8 @@ export default function AboutPage() {
         </section>
 
         {/* Meet The Team */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-6">
+        <section className="py-24 bg-white w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
               Our People
             </div>
@@ -107,10 +107,10 @@ export default function AboutPage() {
         </section>
 
         {/* Timeline / Progress */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-6">
-            <div className="flex flex-col md:flex-row gap-16">
-              <div className="md:w-1/3">
+        <section className="py-24 bg-white w-full">
+          <div className="max-w-6xl mx-auto px-6 md:px-8 w-full">
+            <div className="flex flex-col md:flex-row gap-12 md:gap-20">
+              <div className="w-full md:w-2/5">
                 <div className="sticky top-32">
                   <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
                     Our Journey
@@ -125,7 +125,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="md:w-2/3 relative border-l border-gray-200 ml-4 md:ml-0 pl-8 md:pl-12 space-y-16">
+              <div className="w-full md:w-3/5 relative border-l border-gray-200 pl-8 md:pl-12 space-y-16">
                 {[
                   {
                     year: "2023",
@@ -169,8 +169,8 @@ export default function AboutPage() {
         </section>
 
         {/* Quote */}
-        <section className="py-32 bg-white text-center">
-          <div className="container mx-auto px-6 max-w-4xl">
+        <section className="py-32 bg-white text-center w-full">
+          <div className="max-w-4xl mx-auto px-6 md:px-8 w-full">
             <h2 className="text-3xl md:text-5xl font-serif leading-tight text-slate-900 mb-12">
               Lorem ipsum dolor sit amet, consectetur adipiscing Lorem ipsum
             </h2>
@@ -187,8 +187,8 @@ export default function AboutPage() {
         </section>
 
         {/* Stats Grid */}
-        <section className="py-24 bg-white border-t border-gray-100">
-          <div className="container mx-auto px-6">
+        <section className="py-24 bg-white border-t border-gray-100 w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div className="grid md:grid-cols-2 gap-16">
               <div className="flex flex-col justify-center">
                 <h2 className="text-4xl md:text-6xl font-serif mb-6">
@@ -222,8 +222,8 @@ export default function AboutPage() {
         </section>
 
         {/* Contact Section */}
-        <section className="bg-white py-24">
-          <div className="container mx-auto px-6">
+        <section className="bg-white py-24 w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div className="grid lg:grid-cols-2 gap-16">
               <div>
                 <h2 className="text-4xl md:text-6xl font-serif mb-8 text-slate-900">

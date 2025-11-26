@@ -50,24 +50,26 @@ const TermsPage = () => {
       </div>
 
       {/* --- Header Section --- */}
-      <header className="pt-20 pb-12 px-4 sm:px-6 text-center max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-serif text-gray-900 mb-6 tracking-tight">
-          Terms and Conditions
-        </h1>
-        <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
-          Please read these terms and conditions carefully before using our
-          service. They outline the rules and regulations for the use of
-          Scavyt's Website.
-        </p>
-        <div className="inline-block px-4 py-2 bg-gray-50 rounded-full border border-gray-100">
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
-            Last Updated: 24 November 2025
+      <header className="pt-20 pb-12 px-6 md:px-8 text-center w-full">
+        <div className="max-w-4xl mx-auto w-full">
+          <h1 className="text-4xl md:text-6xl font-serif text-gray-900 mb-6 tracking-tight">
+            Terms and Conditions
+          </h1>
+          <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+            Please read these terms and conditions carefully before using our
+            service. They outline the rules and regulations for the use of
+            Scavyt's Website.
           </p>
+          <div className="inline-block px-4 py-2 bg-gray-50 rounded-full border border-gray-100">
+            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
+              Last Updated: 24 November 2025
+            </p>
+          </div>
         </div>
       </header>
 
       {/* --- Main Terms Content --- */}
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 pb-24">
+      <main className="max-w-3xl mx-auto px-6 md:px-8 pb-24 w-full">
         <div className="space-y-12">
           {termsContent.map((section, index) => (
             <section
@@ -87,8 +89,8 @@ const TermsPage = () => {
       </main>
 
       {/* --- Contact Section --- */}
-      <section className="bg-white py-20 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-white py-20 border-t border-gray-100 w-full">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
             {/* Left Column: CTA */}
             <div className="lg:col-span-5 flex flex-col justify-center">

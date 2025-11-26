@@ -31,8 +31,8 @@ export default function ProductsPage() {
 
       <main>
         {/* Products Header */}
-        <section className="pb-16 bg-white pt-20">
-          <div className="container mx-auto px-6">
+        <section className="pb-16 bg-white pt-20 w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <h1 className="text-5xl md:text-7xl font-serif leading-tight mb-8 text-slate-900">
               Our Products
             </h1>
@@ -45,13 +45,13 @@ export default function ProductsPage() {
         </section>
 
         {/* Product List */}
-        <section className="pb-24 bg-white">
-          <div className="container mx-auto px-6 flex flex-col items-center gap-4">
+        <section className="pb-24 bg-white w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full flex flex-col items-center gap-4">
             {[1, 2, 3, 4].map((product) => (
               <Link
                 key={product}
                 href={`/products/${product}`}
-                className="relative w-full md:w-[1376px] h-[60vh] rounded-2xl overflow-hidden group cursor-pointer block rotate-0 opacity-100"
+                className="relative w-full h-[60vh] rounded-2xl overflow-hidden group cursor-pointer block rotate-0 opacity-100"
               >
                 <div className="w-full h-full bg-gray-600 transition-transform duration-700 group-hover:scale-105"></div>
                 {/* Overlay */}
@@ -77,8 +77,8 @@ export default function ProductsPage() {
         </section>
 
         {/* Simple Stats Strip */}
-        <section className="py-20 bg-white border-t border-gray-100">
-          <div className="container mx-auto px-6">
+        <section className="py-20 bg-white border-t border-gray-100 w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div>
                 <h3 className="text-3xl font-serif mb-2">1500+</h3>
@@ -109,33 +109,33 @@ export default function ProductsPage() {
         </section>
 
         {/* Contact Section */}
-         <section className="bg-white py-24">
-                  <div className="container mx-auto px-6">
-                    <div className="grid lg:grid-cols-2 gap-16">
-                      <div>
-                        <h2 className="text-4xl md:text-6xl font-serif mb-8 text-slate-900">
-                          Lorem ipsum dolor sit amet consectetur
-                        </h2>
-                        <p className="text-slate-500 text-lg mb-12 max-w-md">
-                          We are always looking for new challenges and interesting
-                          partners. Also, we love good coffee.
-                        </p>
-                        <div className="space-y-4">
-                          <div className="flex items-center gap-4 text-slate-800">
-                            <div className="w-2 h-2 bg-black rounded-full"></div>
-                            <span>hello@brandname.com</span>
-                          </div>
-                          <div className="flex items-center gap-4 text-slate-800">
-                            <div className="w-2 h-2 bg-black rounded-full"></div>
-                            <span>+1 (555) 123-4567</span>
-                          </div>
-                        </div>
-                      </div>
-        
-                      <ContactForm />
-                    </div>
+        <section className="bg-white py-24 w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
+            <div className="grid lg:grid-cols-2 gap-16">
+              <div>
+                <h2 className="text-4xl md:text-6xl font-serif mb-8 text-slate-900">
+                  Lorem ipsum dolor sit amet consectetur
+                </h2>
+                <p className="text-slate-500 text-lg mb-12 max-w-md">
+                  We are always looking for new challenges and interesting
+                  partners. Also, we love good coffee.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4 text-slate-800">
+                    <div className="w-2 h-2 bg-black rounded-full"></div>
+                    <span>hello@brandname.com</span>
                   </div>
-                </section>
+                  <div className="flex items-center gap-4 text-slate-800">
+                    <div className="w-2 h-2 bg-black rounded-full"></div>
+                    <span>+1 (555) 123-4567</span>
+                  </div>
+                </div>
+              </div>
+
+              <ContactForm />
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

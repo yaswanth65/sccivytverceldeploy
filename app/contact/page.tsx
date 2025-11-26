@@ -30,8 +30,8 @@ export default function ContactPage() {
 
       <main>
         {/* Contact Hero */}
-        <section className="pt-32 pb-16 md:pt-48 bg-white">
-          <div className="container mx-auto px-6">
+        <section className="pt-32 pb-16 md:pt-48 bg-white w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div className="text-center max-w-4xl mx-auto mb-16">
               <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">
                 About Us
@@ -114,8 +114,8 @@ export default function ContactPage() {
         </section>
 
         {/* Form Section */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-6">
+        <section className="py-24 bg-white w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div className="grid lg:grid-cols-2 gap-16">
               {/* Left Text */}
               <div>
