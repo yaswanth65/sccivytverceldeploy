@@ -10,33 +10,33 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 const services = [
   {
     id: 1,
-    title: "Brand Strategy",
+    title: "Yetzu – Academic & Research Mentorship Platform",
     description:
-      "We build brands that stand for something. Our strategic approach combines market research, consumer insights, and creative vision to position your brand for long-term success in a crowded marketplace.",
+      "A comprehensive digital ecosystem that blends curriculum-based learning with expert-led mentorship.",
     image:
       "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1000",
   },
   {
     id: 2,
-    title: "Digital Experience",
+    title: "NationCite – India’s Research Impact Portal",
     description:
-      "Creating seamless digital journeys that convert. We design and develop websites, applications, and digital products that are not only visually stunning but also intuitive and performance-driven.",
+      "A data-driven platform showcasing India’s research output with real-time national rankings and analytics.",
     image:
       "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1000",
   },
   {
     id: 3,
-    title: "Content Creation",
+    title: "SubmitRight – Academic Services Platform",
     description:
-      "Stories that resonate and engage. From video production to copywriting, our content team crafts compelling narratives that connect with your audience across all channels and touchpoints.",
+      "A complete publication-support system offering editing, translation, and journal submission services.",
     image:
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1000",
   },
   {
     id: 4,
-    title: "Social Media",
+    title: "Beentu AI – AI Academic Writing Assistant",
     description:
-      "Building communities, not just followers. We develop social strategies that foster genuine engagement, amplify your brand voice, and drive measurable growth across all major platforms.",
+      "An intelligent writing engine that enhances grammar, structure, and clarity for academic documents.",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000",
   },
