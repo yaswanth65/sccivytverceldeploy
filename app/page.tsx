@@ -149,9 +149,9 @@ export default function HomePage() {
                       lineHeight: "110%",
                     }}
                   >
-                    Lorem Ipsum <br />
-                    Lorem <br />
-                    Lorem Ipsum
+                    Shaping the Future of  <br />
+                    Education & Research Through <br />
+                    Intelligent Technology
                   </h1>
                 </div>
 
@@ -159,9 +159,7 @@ export default function HomePage() {
                 <div className="space-y-8 lg:pl-16 lg:flex lg:flex-col lg:items-end lg:text-right">
                   {/* Text */}
                   <p className="text-[15px] md:text-base text-white/85 leading-relaxed max-w-sm">
-                    SCIVYT empowers learners, educators, and researchers with
-                    advanced digital platforms that bridge academic knowledge
-                    with real-world impact.
+                    SCIVYT empowers learners, educators, and researchers with advanced digital platforms that bridge academic knowledge with real-world impact.
                   </p>
 
                   {/* CTAs */}
@@ -337,7 +335,7 @@ export default function HomePage() {
               <div>
                 <div className="mb-12">
                   <h2 className="text-4xl md:text-6xl font-serif leading-[1.1] mb-8">
-                    Measuring success by results, not just effort.
+                    Building the Future of Learning, Research & Innovation.
                   </h2>
                   <p className="text-slate-500 text-lg leading-relaxed mb-8">
                     We believe in transparency and measurable outcomes. Our
@@ -394,11 +392,10 @@ export default function HomePage() {
             <div className="grid lg:grid-cols-2 gap-16">
               <div>
                 <h2 className="text-4xl md:text-6xl font-serif mb-8 text-slate-900">
-                  Lorem ipsum dolor sit amet consectetur
+                  Connect With SCIVYT
                 </h2>
                 <p className="text-slate-500 text-lg mb-12 max-w-md">
-                  We are always looking for new challenges and interesting
-                  partners. Also, we love good coffee.
+                  Reach out to our global team for partnerships, product inquiries, or academic collaboration opportunities. We are here to support your journey in education and research.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4 text-slate-800">
