@@ -1,110 +1,112 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import CampaignSlider from "@/components/CampaignSlider";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+
+const services = [
+  {
+    id: 1,
+    title: "Brand Strategy",
+    description:
+      "We build brands that stand for something. Our strategic approach combines market research, consumer insights, and creative vision to position your brand for long-term success in a crowded marketplace.",
+    image:
+      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1000",
+  },
+  {
+    id: 2,
+    title: "Digital Experience",
+    description:
+      "Creating seamless digital journeys that convert. We design and develop websites, applications, and digital products that are not only visually stunning but also intuitive and performance-driven.",
+    image:
+      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1000",
+  },
+  {
+    id: 3,
+    title: "Content Creation",
+    description:
+      "Stories that resonate and engage. From video production to copywriting, our content team crafts compelling narratives that connect with your audience across all channels and touchpoints.",
+    image:
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1000",
+  },
+  {
+    id: 4,
+    title: "Social Media",
+    description:
+      "Building communities, not just followers. We develop social strategies that foster genuine engagement, amplify your brand voice, and drive measurable growth across all major platforms.",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000",
+  },
+];
 
 export default function HomePage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeService, setActiveService] = useState(1);
+  const serviceRefs = useRef<Record<number, HTMLDivElement | null>>({});
 
-  // Note: Ensure your TS config allows this pattern, or define refs individually.
-  const serviceRefs: { [key: number]: React.RefObject<HTMLDivElement> } = {
-    1: React.useRef(null),
-    2: React.useRef(null),
-    3: React.useRef(null),
-    4: React.useRef(null),
-    5: React.useRef(null),
-  };
-
-  const services = [
-    {
-      id: 1,
-      title: "YETZU",
-      description:
-        "Modern fashion bringing the lorem support the people, of the people, by the people for the people - Democratic Country- the people - Democratic Country",
-    },
-    {
-      id: 2,
-      title: "NationCite",
-      description:
-        "Modern Lorem ipsum bringing the lorem support the people, of the people, by the people for the people - Democratic Country",
-    },
-    {
-      id: 3,
-      title: "Digital Strategy",
-      description:
-        "Modern Lorem ipsum bringing the lorem support the people, of the people, by the people for the people - Democratic Country",
-    },
-    {
-      id: 4,
-      title: "Brand Identity",
-      description:
-        "Modern Lorem ipsum bringing the lorem support the people, of the people, by the people for the people - Democratic Country",
-    },
-    {
-      id: 5,
-      title: "Web Development",
-      description:
-        "Modern Lorem ipsum bringing the lorem support the people, of the people, by the people for the people - Democratic Country",
-    },
-  ];
-
-  const serviceImages = [
-    "https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1487215078519-e21cc028cb29?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2070&auto=format&fit=crop",
-  ];
-
+  // Navbar scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-
-      // Update active service based on scroll position
-      for (let i = 1; i <= 5; i++) {
-        const ref = serviceRefs[i];
-        if (ref.current) {
-          const rect = ref.current.getBoundingClientRect();
-          if (
-            rect.top < window.innerHeight / 2 &&
-            rect.bottom > window.innerHeight / 2
-          ) {
-            setActiveService(i);
-          }
-        }
-      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToService = (serviceId: number) => {
-    setActiveService(serviceId);
-    const ref = serviceRefs[serviceId];
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth", block: "center" });
+  // Service Scroll Spy Logic
+  useEffect(() => {
+    const currentRefs = serviceRefs.current;
+
+    // Trigger when the element is near the center of the viewport
+    const observerOptions = {
+      root: null,
+      rootMargin: "-40% 0px -40% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = Number(entry.target.getAttribute("data-id"));
+          if (!isNaN(id)) {
+            setActiveService(id);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+
+    // Observe all service sections
+    Object.values(currentRefs).forEach((ref: any) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      if (observer) observer.disconnect();
+    };
+  }, []);
+
+  const scrollToService = (id: number) => {
+    const element = serviceRefs.current[id];
+    if (element) {
+      // Offset for sticky header
+      const yOffset = -150;
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
   return (
     <div className="font-sans text-slate-900 bg-white">
-      <Navbar
-        toggleMenu={toggleMenu}
-        isMenuOpen={isMenuOpen}
-        scrolled={scrolled}
-      />
+      <Navbar toggleMenu={() => {}} isMenuOpen={false} scrolled={scrolled} />
 
       <main>
         {/* Hero Section */}
@@ -133,35 +135,67 @@ export default function HomePage() {
                     </p>
                   </div>
 
-                  <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-tight">
-                    Lorem Ipsum Lorem <br />
+                  <h1
+                    className="font-serif text-6xl md:text-7xl lg:text-8xl leading-tight"
+                    style={{
+                      width: "100%",
+                      maxWidth: "847px",
+                      flexShrink: 0,
+                      color: "var(--SCI-White, #F4F3EA)",
+                      fontFamily: "Libre Baskerville, serif",
+                      fontSize: "clamp(3rem, 5vw, 56px)",
+                      fontStyle: "normal",
+                      fontWeight: 400,
+                      lineHeight: "110%",
+                    }}
+                  >
+                    Lorem Ipsum <br />
+                    Lorem <br />
                     Lorem Ipsum
                   </h1>
                 </div>
 
                 {/* Right Column */}
-                <div className="space-y-8 lg:pl-12">
-                  <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-md">
-                    Scivyt is a platform where you can benefit Lorem ipsum dolor
-                    sit amet, consectetuer adipiscing elit. Aenean commodo
-                    ligula eget dolor.
+                <div className="space-y-8 lg:pl-16 lg:flex lg:flex-col lg:items-end lg:text-right">
+                  {/* Text */}
+                  <p className="text-[15px] md:text-base text-white/85 leading-relaxed max-w-sm">
+                    SCIVYT empowers learners, educators, and researchers with
+                    advanced digital platforms that bridge academic knowledge
+                    with real-world impact.
                   </p>
 
-                  <div className="flex flex-wrap items-center gap-4">
+                  {/* CTAs */}
+                  <div className="flex items-center gap-4">
                     {/* View Products */}
-                    <button className="bg-white text-black px-8 py-3 rounded-full font-medium text-sm hover:bg-gray-100 transition">
+                    <button
+                      className="inline-flex items-center justify-center bg-white text-black 
+                 px-9 py-3 rounded-full font-medium text-sm
+                 shadow-lg shadow-black/40
+                 hover:bg-white/90 transition"
+                    >
                       View Products
                     </button>
 
-                    {/* Book a Call */}
-                    <button className="group flex items-center gap-3 bg-black/40 backdrop-blur-sm border border-white/10 pl-2 pr-6 py-2 rounded-full hover:bg-black/60 transition cursor-pointer">
-                      <div className="relative">
+                    {/* Book a call */}
+                    <button
+                      className="group inline-flex items-center gap-3 
+                 bg-black/70 backdrop-blur-sm
+                 border border-white/15
+                 pl-2.5 pr-7 py-2.5
+                 rounded-full
+                 shadow-lg shadow-black/50
+                 hover:bg-black/90 transition cursor-pointer"
+                    >
+                      <div className="relative flex-shrink-0">
                         <img
                           src="https://randomuser.me/api/portraits/men/32.jpg"
                           alt="Agent"
-                          className="w-8 h-8 rounded-full border border-white/20"
+                          className="w-9 h-9 rounded-full border-2 border-white/80"
                         />
-                        <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-black rounded-full"></span>
+                        <span
+                          className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 
+                     border-2 border-black rounded-full"
+                        />
                       </div>
                       <span className="text-sm text-white font-medium">
                         Book a call
@@ -217,7 +251,7 @@ export default function HomePage() {
 
         {/* Dark Services Section */}
         <section className="bg-[#0a0a0a] text-white py-24 md:py-32 relative w-full">
-          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
+          <div className="px-4 sm:px-6 md:px-[72px] w-full">
             <div className="flex flex-col lg:flex-row gap-12">
               {/* Sticky Sidebar (Desktop Only) */}
               <div className="lg:w-1/4 hidden lg:block">
@@ -237,9 +271,9 @@ export default function HomePage() {
                         }`}
                       >
                         <span
-                          className={`text-sm font-mono ${
+                          className={`text-sm font-mono transition-opacity duration-300 ${
                             activeService === service.id
-                              ? "text-blue-500"
+                              ? "text-blue-500 opacity-100"
                               : "opacity-0"
                           }`}
                         >
@@ -257,13 +291,16 @@ export default function HomePage() {
                 {services.map((service, index) => (
                   <div
                     key={service.id}
-                    ref={serviceRefs[service.id]}
+                    ref={(el) => {
+                      if (el) serviceRefs.current[service.id] = el;
+                    }}
+                    data-id={service.id}
                     className="group scroll-mt-20"
                   >
-                    <div className="flex flex-col md:flex-row gap-8 items-center">
+                    <div className="flex flex-col md:flex-row gap-8 items-start">
                       <div className="w-full md:w-1/2 overflow-hidden rounded-sm">
                         <img
-                          src={serviceImages[index]}
+                          src={service.image}
                           alt={service.title}
                           className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700"
                         />
@@ -295,7 +332,7 @@ export default function HomePage() {
 
         {/* Stats Section */}
         <section className="py-24 bg-white text-slate-900 w-full">
-          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
+          <div className="px-4 sm:px-6 md:px-[72px] w-full">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
                 <div className="mb-12">
@@ -349,84 +386,11 @@ export default function HomePage() {
         </section>
 
         {/* Parallax/Quote Section */}
-        <section className="relative py-32 bg-[#1a1a1a] overflow-hidden w-full">
-          {/* Background with blur */}
-          <div className="absolute inset-0 z-0">
-            <img
-              src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=2000"
-              className="w-full h-full object-cover opacity-30 blur-sm"
-              alt="Children background"
-            />
-          </div>
-
-          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full">
-            <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-white/80 mb-6">
-              <span className="w-1.5 h-1.5 bg-white rounded-full"></span>{" "}
-              Successful Campaigns
-            </div>
-
-            <h2 className="text-5xl md:text-6xl text-white font-serif mb-16 max-w-2xl">
-              From Idea to <br />
-              Sustainable Success
-            </h2>
-
-            {/* Dark Card */}
-            <div className="bg-[#151515] p-8 md:p-0 max-w-5xl mx-auto rounded-lg overflow-hidden shadow-2xl">
-              <div className="grid md:grid-cols-2">
-                <div className="relative h-[400px] md:h-auto">
-                  <img
-                    src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&q=80&w=800"
-                    className="w-full h-full object-cover"
-                    alt="Campaign detail"
-                  />
-                  <div className="absolute bottom-6 left-6 text-white">
-                    <p className="font-bold text-lg">- Ratan Tata</p>
-                    <p className="text-xs text-white/60">
-                      Founder of TATA Services
-                    </p>
-                  </div>
-                  <div className="absolute top-6 left-6 text-white font-bold tracking-widest">
-                    COMPANY NAME®
-                  </div>
-                </div>
-
-                <div className="p-6 md:p-8 lg:p-12 flex flex-col justify-between bg-[#151515] text-white">
-                  <div>
-                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-gray-500 mb-6">
-                      <span className="w-1 h-1 bg-white rounded-full"></span>{" "}
-                      Campaign Name
-                    </div>
-                    <h3 className="text-2xl md:text-3xl font-serif leading-snug mb-4">
-                      “Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                      labore ut amet sir”
-                    </h3>
-                  </div>
-
-                  <div className="flex items-end justify-between mt-12">
-                    <div>
-                      <div className="text-5xl md:text-6xl font-serif mb-2">
-                        82%
-                      </div>
-                      <p className="text-xs text-gray-500 uppercase">
-                        Outcome of the campaign
-                      </p>
-                    </div>
-                    <button className="flex items-center gap-3 text-sm hover:text-gray-300 transition-colors">
-                      Read Case Study{" "}
-                      <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black">
-                        <ArrowRight size={14} />
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CampaignSlider />
 
         {/* Contact Section */}
         <section className="bg-white py-24 w-full">
-          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
+          <div className="px-4 sm:px-6 md:px-[72px] w-full">
             <div className="grid lg:grid-cols-2 gap-16">
               <div>
                 <h2 className="text-4xl md:text-6xl font-serif mb-8 text-slate-900">
