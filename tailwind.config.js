@@ -12,6 +12,15 @@ module.exports = {
         serif: ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
         mono: ['Menlo', 'Monaco', 'Courier New', 'monospace'],
       },
+      fontSize: {
+        // Legacy sizes (deprecated - use semantic classes instead)
+        'h1': '72px',
+        'h2': '48px',
+        'h3': '36px',
+        'p1': '20px',
+        'p2': '18px',
+        'p3': '12px',
+      },
     },
   },
   plugins: [],

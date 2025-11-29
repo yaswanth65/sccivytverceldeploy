@@ -10,35 +10,57 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 const services = [
   {
     id: 1,
-    title: "Brand Strategy",
+    title: "Yetzu – Academic & Research Mentorship Platform",
+    category: "EDTECH",
     description:
-      "We build brands that stand for something. Our strategic approach combines market research, consumer insights, and creative vision to position your brand for long-term success in a crowded marketplace.",
+      "A comprehensive digital ecosystem that blends curriculum-based learning with expert-led mentorship.",
+    description2:
+      "Designed to build research skills, academic excellence, and publication readiness.",
     image:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1000",
+      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=675&h=900",
   },
   {
     id: 2,
-    title: "Digital Experience",
+    title: "NationCite – India's Research Impact Portal",
+    category: "EDTECH",
     description:
-      "Creating seamless digital journeys that convert. We design and develop websites, applications, and digital products that are not only visually stunning but also intuitive and performance-driven.",
+      "A data-driven platform showcasing India's research output with real-time national rankings and analytics.",
+    description2:
+      "Built to enhance academic visibility, credibility, and research accountability.",
     image:
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1000",
+      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=675&h=900",
   },
   {
     id: 3,
-    title: "Content Creation",
+    title: "SubmitRight – Academic Services Platform",
+    category: "EDTECH",
     description:
-      "Stories that resonate and engage. From video production to copywriting, our content team crafts compelling narratives that connect with your audience across all channels and touchpoints.",
+      "A complete publication-support system offering editing, translation, and journal submission services.",
+    description2:
+      "Helping researchers publish confidently and efficiently with expert guidance.",
     image:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1000",
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=675&h=900",
   },
   {
     id: 4,
-    title: "Social Media",
+    title: "Beentu AI – AI Academic Writing Assistant",
+    category: "EDTECH",
     description:
-      "Building communities, not just followers. We develop social strategies that foster genuine engagement, amplify your brand voice, and drive measurable growth across all major platforms.",
+      "An intelligent writing engine that enhances grammar, structure, and clarity for academic documents.",
+    description2:
+      "Designed to accelerate research writing and ensure publication-ready output.",
     image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=675&h=900",
+  },
+  {
+    id: 5,
+    title: "lorem",
+    category: "EDTECH",
+    description: "lorerm.",
+    description2:
+      "Providing global researchers a trusted stage to publish impactful scientific work.",
+    image:
+      "https://images.unsplash.com/photo-1512941691920-25bdb67cbcb2?auto=format&fit=crop&q=80&w=675&h=900",
   },
 ];
 
@@ -128,27 +150,7 @@ export default function HomePage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
                 {/* Left Column */}
                 <div className="space-y-4">
-                  <div className="flex items-center gap-2">
-                    <span className="w-1 h-1 bg-white rounded-full"></span>
-                    <p className="text-xs uppercase tracking-[0.2em] text-white/80">
-                      Scivyt Introduction
-                    </p>
-                  </div>
-
-                  <h1
-                    className="font-serif text-6xl md:text-7xl lg:text-8xl leading-tight"
-                    style={{
-                      width: "100%",
-                      maxWidth: "847px",
-                      flexShrink: 0,
-                      color: "var(--SCI-White, #F4F3EA)",
-                      fontFamily: "Libre Baskerville, serif",
-                      fontSize: "clamp(3rem, 5vw, 56px)",
-                      fontStyle: "normal",
-                      fontWeight: 400,
-                      lineHeight: "110%",
-                    }}
-                  >
+                  <h1 className="font-serif text-hero text-[#F4F3EA] max-w-[847px]">
                     Lorem Ipsum <br />
                     Lorem <br />
                     Lorem Ipsum
@@ -158,7 +160,7 @@ export default function HomePage() {
                 {/* Right Column */}
                 <div className="space-y-8 lg:pl-16 lg:flex lg:flex-col lg:items-end lg:text-right">
                   {/* Text */}
-                  <p className="text-[15px] md:text-base text-white/85 leading-relaxed max-w-sm">
+                  <p className="text-lead text-white/85 max-w-sm">
                     SCIVYT empowers learners, educators, and researchers with
                     advanced digital platforms that bridge academic knowledge
                     with real-world impact.
@@ -212,11 +214,11 @@ export default function HomePage() {
         <section className="py-24 bg-white w-full">
           <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div className="max-w-4xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-serif leading-tight mb-8 text-slate-900">
+              <h2 className="text-section font-serif mb-8 text-slate-900">
                 Bring the capabilities of your large scale enterprise to the
                 next level.
               </h2>
-              <p className="text-slate-500 text-lg leading-relaxed">
+              <p className="text-slate-500 text-body">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
                 commodo ligula eget dolor. Aenean massa. Cum sociis natoque
                 penatibus et magnis dis parturient montes.
@@ -251,35 +253,31 @@ export default function HomePage() {
 
         {/* Dark Services Section */}
         <section className="bg-[#0a0a0a] text-white py-24 md:py-32 relative w-full">
+          <div className="mb-12 text-center px-4 sm:px-6 md:px-[72px] w-full pb-1">
+                  <h2 className="text-section font-serif mb-8">
+                   Innovative Solutions for Modern <br /> Academic & Research Challenges
+                  </h2>
+          </div>
           <div className="px-4 sm:px-6 md:px-[72px] w-full">
             <div className="flex flex-col lg:flex-row gap-12">
               {/* Sticky Sidebar (Desktop Only) */}
               <div className="lg:w-1/4 hidden lg:block">
                 <div className="sticky top-32 space-y-8 h-fit">
                   <div className="text-xs uppercase tracking-widest text-gray-500 font-semibold">
-                    Our Services
+                    Our Products
                   </div>
                   <ul className="space-y-6 text-2xl font-light text-gray-600">
                     {services.map((service) => (
                       <li
                         key={service.id}
                         onClick={() => scrollToService(service.id)}
-                        className={`cursor-pointer transition-all duration-300 flex items-center gap-4 ${
+                        className={`cursor-pointer transition-all duration-300 ${
                           activeService === service.id
                             ? "text-white scale-105 origin-left"
                             : "hover:text-gray-400"
                         }`}
                       >
-                        <span
-                          className={`text-sm font-mono transition-opacity duration-300 ${
-                            activeService === service.id
-                              ? "text-blue-500 opacity-100"
-                              : "opacity-0"
-                          }`}
-                        >
-                          0{service.id}
-                        </span>
-                        {service.title}
+                        {service.title.split(" – ")[0]}
                       </li>
                     ))}
                   </ul>
@@ -295,32 +293,30 @@ export default function HomePage() {
                       if (el) serviceRefs.current[service.id] = el;
                     }}
                     data-id={service.id}
-                    className="group scroll-mt-20"
+                    className="group scroll-mt-20 cursor-pointer"
                   >
                     <div className="flex flex-col md:flex-row gap-8 items-start">
                       <div className="w-full md:w-1/2 overflow-hidden rounded-sm">
                         <img
                           src={service.image}
                           alt={service.title}
-                          className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                          className="w-full aspect-[3/4] object-cover transform group-hover:scale-105 transition-transform duration-700"
                         />
                       </div>
                       <div className="w-full md:w-1/2">
-                        <div className="flex items-center gap-4 mb-4">
-                          <span className="text-sm font-mono text-gray-500">
-                            0{service.id}
-                          </span>
-                          <div className="h-[1px] w-12 bg-gray-700"></div>
+                        <div className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-4 flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 bg-white rounded-full"></span>
+                          {service.category}
                         </div>
-                        <h3 className="text-3xl font-serif mb-6">
+                        <h3 className="text-card font-light font-serif mb-6 max-w-lg">
                           {service.title}
                         </h3>
-                        <p className="text-gray-400 leading-relaxed mb-8">
+                        <p className="text-gray-400 mb-4 max-w-[330px] text-body">
                           {service.description}
                         </p>
-                        <button className="flex items-center text-sm uppercase tracking-widest hover:text-gray-300 transition-colors gap-2">
-                          Explore Case <ArrowUpRight size={16} />
-                        </button>
+                        <p className="text-gray-400 mb-8 max-w-[330px] text-body">
+                          {service.description2}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -336,10 +332,10 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
                 <div className="mb-12">
-                  <h2 className="text-4xl md:text-6xl font-serif leading-[1.1] mb-8">
+                  <h2 className="text-section font-serif mb-8">
                     Measuring success by results, not just effort.
                   </h2>
-                  <p className="text-slate-500 text-lg leading-relaxed mb-8">
+                  <p className="text-slate-500 text-body mb-8">
                     We believe in transparency and measurable outcomes. Our
                     track record speaks for itself, delivering consistent value
                     across industries and borders.
@@ -354,18 +350,14 @@ export default function HomePage() {
 
                 <div className="grid grid-cols-2 gap-12">
                   <div className="border-l-2 border-slate-200 pl-6">
-                    <div className="text-5xl md:text-6xl font-serif mb-2">
-                      50+
-                    </div>
-                    <div className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                    <div className="text-subhead font-serif mb-2">50+</div>
+                    <div className="text-caption font-bold uppercase tracking-widest text-slate-400">
                       Global Clients
                     </div>
                   </div>
                   <div className="border-l-2 border-slate-200 pl-6">
-                    <div className="text-5xl md:text-6xl font-serif mb-2">
-                      1.5k+
-                    </div>
-                    <div className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                    <div className="text-subhead font-serif mb-2">1.5k+</div>
+                    <div className="text-caption font-bold uppercase tracking-widest text-slate-400">
                       Projects Delivered
                     </div>
                   </div>
@@ -393,10 +385,10 @@ export default function HomePage() {
           <div className="px-4 sm:px-6 md:px-[72px] w-full">
             <div className="grid lg:grid-cols-2 gap-16">
               <div>
-                <h2 className="text-4xl md:text-6xl font-serif mb-8 text-slate-900">
+                <h2 className="text-section font-serif mb-8 text-slate-900">
                   Lorem ipsum dolor sit amet consectetur
                 </h2>
-                <p className="text-slate-500 text-lg mb-12 max-w-md">
+                <p className="text-slate-500 text-body mb-12 max-w-md">
                   We are always looking for new challenges and interesting
                   partners. Also, we love good coffee.
                 </p>

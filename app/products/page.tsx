@@ -31,12 +31,12 @@ export default function ProductsPage() {
 
       <main>
         {/* Products Header */}
-        <section className="pb-16 bg-white pt-20 w-full">
-          <div className="px-4 sm:px-6 md:px-[72px] w-full">
+        <section className="pb-16 bg-white pt-[150px] w-full">
+          <div className="px-4 sm:px-6 md:px-[72px] w-full text-center">
             <h1 className="text-5xl md:text-7xl font-serif leading-tight mb-8 text-slate-900">
               Our Products
             </h1>
-            <p className="text-slate-500 text-lg leading-relaxed max-w-3xl">
+            <p className="text-slate-500 text-lg leading-relaxed max-w-3xl text-center mx-auto mb-6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation.
@@ -55,7 +55,7 @@ export default function ProductsPage() {
               >
                 <div className="w-full h-full bg-gray-600 transition-transform duration-700 group-hover:scale-105"></div>
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent flex flex-col justify-center pl-8 md:pl-16">
+                <div className="absolute pt-11 inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent flex flex-col  pl-8 md:pl-16">
                   <div className="bg-white/20 backdrop-blur-sm text-white px-4 py-1 rounded-full w-fit text-xs uppercase tracking-wider mb-4">
                     New Arrival
                   </div>

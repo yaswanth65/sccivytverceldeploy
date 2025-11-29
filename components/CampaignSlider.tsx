@@ -88,7 +88,7 @@ export default function CampaignSlider() {
           </div>
 
           <div className="flex flex-col md:flex-row justify-between items-end gap-8">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#e8e8e8] font-serif leading-tight max-w-4xl tracking-tight">
+            <h2 className="text-section text-[#e8e8e8] font-serif max-w-4xl tracking-tight">
               {currentCampaign.title}
             </h2>
 
@@ -161,7 +161,7 @@ export default function CampaignSlider() {
                     Campaign Name
                   </div>
 
-                  <h3 className="text-3xl md:text-4xl font-serif leading-snug text-[#e0e0e0] max-w-2xl">
+                  <h3 className="text-card font-serif text-[#e0e0e0] max-w-2xl">
                     "{currentCampaign.description}"
                   </h3>
                 </div>
@@ -170,10 +170,10 @@ export default function CampaignSlider() {
                 <div className="flex items-end justify-between mt-16 md:mt-0">
                   {/* Bottom Left: Outcome */}
                   <div className="flex flex-col">
-                    <div className="text-6xl font-serif text-white leading-none mb-2">
+                    <div className="text-5xl md:text-6xl font-serif text-white leading-none mb-2">
                       {currentCampaign.outcome}
                     </div>
-                    <p className="text-[10px] text-white/40 uppercase tracking-wide font-light">
+                    <p className="text-caption text-white/40 uppercase tracking-wide font-light">
                       Outcome of the campaign
                     </p>
                   </div>
