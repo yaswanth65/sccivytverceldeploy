@@ -18,8 +18,7 @@ const products = [
     tagline: "Academic & Research Mentorship Platform",
     description:
       "A unified digital ecosystem combining curriculum-based learning, live mentorship, and research training to produce ethical, independent, and publication-ready scholars.",
-    image:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=60&w=675&h=900",
+    image: "/home/dark sections/Yetzu.png",
   },
   {
     id: 2,
@@ -29,8 +28,7 @@ const products = [
     tagline: "Academic Services Platform",
     description:
       "End-to-end academic publication support including editing, translation, and journal submission management for global researchers and institutions.",
-    image:
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=60&w=675&h=900",
+    image: "",
   },
   {
     id: 3,
@@ -51,8 +49,7 @@ const products = [
     tagline: "AI Academic Writing Assistant",
     description:
       "An intelligent academic writing and review system that enhances clarity, structure, citation accuracy, and publication readiness.",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=60&w=675&h=900",
+    image: "/home/dark sections/Beentu AI.png",
   },
   {
     id: 5,
@@ -62,8 +59,7 @@ const products = [
     tagline: "India's Research Impact Portal",
     description:
       "India's national research visibility and analytics platform providing verified rankings, researcher profiles, and institutional performance insights.",
-    image:
-      "https://images.unsplash.com/photo-1512941691920-25bdb67cbcb2?auto=format&fit=crop&q=60&w=675&h=900",
+    image: "/home/dark sections/NATIONCITE.png",
   },
 ];
 
@@ -249,9 +245,7 @@ export default function HomePage() {
                       width={48}
                       height={48}
                       className={`object-cover w-full h-full ${
-                        i === 3
-                          ? "scale-150  translate-y-2"
-                          : "object-center"
+                        i === 3 ? "scale-150  translate-y-2" : "object-center"
                       }`}
                       quality={60}
                     />
@@ -277,13 +271,15 @@ export default function HomePage() {
 
         {/* Dark Services Section */}
         <section className="bg-[#0a0a0a] text-white py-24 md:py-32 relative w-full">
-          <div
-            className="mb-12 text-center px-4 sm:px-6 md:px-[72px] w-full pb-1 
-                lg:ml-[22%] lg:text-left"
-          >
-            <h2 className="text-section font-serif">
-              Integrated Platforms for Academic <br /> Research Excellence
-            </h2>
+          <div className="mb-12 px-4 sm:px-6 md:px-[72px] w-full pb-1">
+            <div className="flex flex-col lg:flex-row gap-12">
+              <div className="lg:w-1/4 hidden lg:block"></div>
+              <div className="lg:w-3/4">
+                <h2 className="text-section font-serif">
+                  Integrated Platforms for <br /> Academic Research Excellence
+                </h2>
+              </div>
+            </div>
           </div>
 
           <div className="px-4 sm:px-6 md:px-[72px] w-full">
@@ -330,7 +326,7 @@ export default function HomePage() {
                           alt={product.title}
                           width={675}
                           height={900}
-                          className="w-full aspect-[3/4] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                          className="w-full aspect-[3/4] object-cover object-right  transform group-hover:scale-10 transition-transform duration-700"
                           quality={60}
                         />
                       </div>

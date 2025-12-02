@@ -65,23 +65,7 @@ export default function ContactForm() {
                   className="w-full bg-[#F5F5F0] border-none rounded-lg px-4 py-3 placeholder:text-gray-400 focus:ring-1 focus:ring-black outline-none"
                 />
               </div>
-              <div>
-                <label className="block text-[10px] font-bold uppercase tracking-wider text-gray-800 mb-2">
-                  Price
-                </label>
-                <div className="relative">
-                  <select className="w-full bg-[#F5F5F0] border-none rounded-lg px-4 py-3 text-gray-500 appearance-none focus:ring-1 focus:ring-black outline-none cursor-pointer">
-                    <option value="">Select your range</option>
-                    <option value="low">$1,000 - $5,000</option>
-                    <option value="medium">$5,000 - $10,000</option>
-                    <option value="high">$10,000+</option>
-                  </select>
-                  {/* Custom dropdown arrow */}
-                  <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
-                    <div className="w-5 h-5 bg-gray-200 rounded"></div>
-                  </div>
-                </div>
-              </div>
+            
             </div>
 
             {/* Message */}

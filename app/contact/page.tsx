@@ -34,7 +34,7 @@ export default function ContactPage() {
           <div className="px-4 sm:px-6 md:px-[72px] w-full">
             <div className="text-center max-w-4xl mx-auto mb-16">
               <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">
-                About Us
+                Contact Us
               </div>
               <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-16 text-slate-900">
                 Lorem ipsum dolor sit amet, consectetur adipiscing Lorem ipsum
@@ -114,33 +114,8 @@ export default function ContactPage() {
         </section>
 
         {/* Form Section */}
-        <section className="py-24 bg-white w-full">
-          <div className="px-4 sm:px-6 md:px-[72px] w-full">
-            <div className="grid lg:grid-cols-2 gap-16">
-              {/* Left Text */}
-              <div>
-                <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">
-                  Contact
-                </div>
-                <h2 className="text-4xl md:text-5xl font-serif mb-8 text-slate-900">
-                  Lorem ipsum dolor self amet consectetur
-                </h2>
-                <p className="text-slate-500 text-lg mb-12 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam.
-                </p>
+                    <ContactForm />
 
-                <button className="border border-gray-300 px-8 py-3 rounded-full flex items-center gap-2 hover:bg-black hover:text-white transition-colors uppercase text-xs tracking-widest font-bold">
-                  CTA Button{" "}
-                  <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-                </button>
-              </div>
-
-              <ContactForm />
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />

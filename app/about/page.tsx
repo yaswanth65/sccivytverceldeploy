@@ -73,7 +73,7 @@ export default function AboutPage() {
           <div className="flex-1 flex flex-col w-full px-6 md:px-8 py-6">
             <div className="max-w-4xl mx-auto w-full text-center mb-6">
               <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">
-                Contact Us
+                About Us
               </div>
 
               <h1 className="text-4xl md:text-6xl font-serif leading-tight mb-4 text-slate-900">
