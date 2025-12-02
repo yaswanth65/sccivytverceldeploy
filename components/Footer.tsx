@@ -105,14 +105,15 @@ export default function Footer() {
               Office
             </h4>
             <p className="text-gray-300 mb-4">
-              123 Innovation Drive
+             Plot 1-98/4/1-13, Unit 602A, 6th Floor, Capital Park, 
               <br />
-              Tech City, TC 90210
+            Image
+Garden Road, Madhapur,
               <br />
-              United States
+             Hyderabad 500081, Telangana, India.
             </p>
             <p className="text-gray-500 text-sm">
-              © 2024 BrandName Inc.
+              © 2025 SCIVYT.
               <br />
               All rights reserved.
             </p>
