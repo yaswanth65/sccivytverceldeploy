@@ -37,9 +37,14 @@ export default function ProductsPage() {
               Our Products
             </h1>
             <p className="text-slate-500 text-lg leading-relaxed max-w-3xl text-center mx-auto mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation.
+              <strong className="block text-slate-900 text-xl mb-2">
+                An Integrated Ecosystem for Education, Research & Publication
+              </strong>
+              SCIVYT brings together powerful platforms designed to support
+              every stage of the academic and research lifecycle — learning,
+              mentorship, writing, publishing, analytics, and global visibility.
+              Each product is built to work independently or as part of one
+              unified academic infrastructure.
             </p>
           </div>
         </section>
@@ -47,10 +52,46 @@ export default function ProductsPage() {
         {/* Product List */}
         <section className="pb-24 bg-white w-full">
           <div className="px-4 sm:px-6 md:px-[72px] w-full flex flex-col items-center gap-4">
-            {[1, 2, 3, 4].map((product) => (
+            {[
+              {
+                title: "YETZU",
+                slug: "yetzu",
+                description:
+                  "A comprehensive academic and research mentorship platform that blends curriculum-based learning, live expert mentorship, and publication-ready research training into one interactive ecosystem for students and professionals.",
+                cta: "Explore Platform",
+              },
+              {
+                title: "Submit Right",
+                slug: "submit-right",
+                description:
+                  "A professional academic services platform that supports researchers with manuscript preparation, formatting, journal selection, compliance checks, and end-to-end submission guidance for higher acceptance success.",
+                cta: "Get Publication Support",
+              },
+              {
+                title: "VITUOR",
+                slug: "vituor",
+                description:
+                  "A peer-reviewed international medical journal providing a trusted stage for high-impact healthcare research with rigorous review, expert editorial support, and global open-access visibility.",
+                cta: "View Journal",
+              },
+              {
+                title: "BEENTU AI",
+                slug: "beentu-ai",
+                description:
+                  "An AI-powered academic writing and research intelligence assistant that enhances clarity, structure, citations, and journal readiness making scientific writing faster, smarter, and publication-focused.",
+                cta: "Try BEENTU AI",
+              },
+              {
+                title: "NationCite",
+                slug: "nationcite",
+                description:
+                  "India’s national research impact portal delivering verified rankings, authenticated researcher profiles, and institutional analytics using real-time bibliometric intelligence and transparent data systems.",
+                cta: "View Research Impact",
+              },
+            ].map((product) => (
               <Link
-                key={product}
-                href={`/products/${product}`}
+                key={product.slug}
+                href={`/products/${product.slug}`}
                 className="relative w-full h-[60vh] rounded-2xl overflow-hidden group cursor-pointer block rotate-0 opacity-100"
               >
                 <div className="w-full h-full bg-gray-600 transition-transform duration-700 group-hover:scale-105"></div>
@@ -60,15 +101,13 @@ export default function ProductsPage() {
                     New Arrival
                   </div>
                   <h2 className="text-4xl md:text-5xl font-serif text-white mb-4">
-                    Modern Lorem Ipsum
+                    {product.title}
                   </h2>
                   <p className="text-gray-200 max-w-md mb-8 leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    {product.description}
                   </p>
                   <span className="border border-white/40 hover:bg-white hover:text-black text-white px-8 py-3 rounded-full w-fit transition-all duration-300 inline-block">
-                    Learn More
+                    {product.cta}
                   </span>
                 </div>
               </Link>
@@ -109,33 +148,7 @@ export default function ProductsPage() {
         </section>
 
         {/* Contact Section */}
-        <section className="bg-white py-24 w-full">
-          <div className="px-4 sm:px-6 md:px-[72px] w-full">
-            <div className="grid lg:grid-cols-2 gap-16">
-              <div>
-                <h2 className="text-4xl md:text-6xl font-serif mb-8 text-slate-900">
-                  Lorem ipsum dolor sit amet consectetur
-                </h2>
-                <p className="text-slate-500 text-lg mb-12 max-w-md">
-                  We are always looking for new challenges and interesting
-                  partners. Also, we love good coffee.
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4 text-slate-800">
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
-                    <span>hello@brandname.com</span>
-                  </div>
-                  <div className="flex items-center gap-4 text-slate-800">
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
-                    <span>+1 (555) 123-4567</span>
-                  </div>
-                </div>
-              </div>
-
-              <ContactForm />
-            </div>
-          </div>
-        </section>
+       <ContactForm />
       </main>
 
       <Footer />

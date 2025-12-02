@@ -12,29 +12,84 @@ const TermsPage = () => {
 
   const termsContent = [
     {
-      title: "Acceptance of Terms",
+      title: "Scope of This Policy",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "This Privacy Policy applies to SCIVYT websites and mobile platforms, AI-driven academic tools, research and education services, medical research support systems, and all related digital and institutional services. It governs information collected both online and offline in connection with our services.",
     },
     {
-      title: "Use Of Services",
+      title: "Information We Collect",
       content:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+        "We collect Personal Identification Information (full name, email, phone, organization, designation), Academic & Research Information (manuscripts, institutional affiliation, research metadata), Technical & Usage Data (IP address, device type, access timestamps, cookies), and Payment Information (transaction IDs, billing details, subscription history). SCIVYT does not store full card or sensitive banking credentials.",
     },
     {
-      title: "Privacy & Data Protection",
+      title: "Lawful Basis for Data Processing",
       content:
-        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+        "SCIVYT processes personal data only when legally permitted under user consent, contractual necessity, legal obligations, legitimate business interests, and academic and research integrity requirements.",
     },
     {
-      title: "Appointments & Cancellations",
+      title: "How We Use Your Information",
       content:
-        "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.",
+        "Your data is used exclusively to deliver and manage SCIVYT services, provide academic and research support, personalize user experience, process submissions and publications, manage subscriptions and transactions, communicate important updates, improve system performance and security, and comply with legal and regulatory requirements. SCIVYT does not sell or rent personal data to third parties.",
     },
     {
-      title: "Limitation of Liability",
+      title: "AI, Research & Medical Data Handling",
       content:
-        "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+        "Where applicable, AI tools may process academic queries, research workflows, and published or submitted content. SCIVYT does not use identifiable personal data to train public AI models, applies strict anonymization and access control protocols, and complies with international research data ethics and integrity standards. SCIVYT is not a medical record storage platform and does not function as a hospital EMR/EHR system unless contractually specified.",
+    },
+    {
+      title: "Cookies & Tracking Technologies",
+      content:
+        "We use cookies and similar technologies to improve platform performance, analyze traffic and user behavior, enhance user personalization, and maintain login and session security. You may disable cookies through your browser settings. However, doing so may limit certain features of the platform.",
+    },
+    {
+      title: "Data Sharing & Disclosure",
+      content:
+        "We may share limited data only with trusted technology service providers (under strict confidentiality agreements), payment gateways and financial processors, legal or regulatory authorities when required by law, and institutional partners under defined contractual obligations. SCIVYT never shares personal data for advertising resale or unauthorized profiling.",
+    },
+    {
+      title: "Cross-Border Data Transfers",
+      content:
+        "As a global platform, SCIVYT may process data across international servers. All international transfers follow GDPR-standard contractual safeguards, apply encryption and access restrictions, and maintain equivalent or higher levels of data protection.",
+    },
+    {
+      title: "Data Retention Policy",
+      content:
+        "We retain personal data only for as long as required to fulfill service purposes, comply with legal or academic obligations, or resolve disputes and enforce agreements. Once no longer required, data is securely deleted or anonymized.",
+    },
+    {
+      title: "Data Security Measures",
+      content:
+        "SCIVYT employs industry-grade security protocols, including end-to-end encryption, secure cloud infrastructure, role-based access controls, regular security audits, and breach detection and monitoring systems. Despite best efforts, no digital system can be 100% secure. Users are also responsible for safeguarding their login credentials.",
+    },
+    {
+      title: "User Rights (GDPR & Global Compliance)",
+      content:
+        "You have the right to access your personal data, request correction of inaccurate data, request deletion (Right to Be Forgotten), restrict or object to processing, withdraw consent at any time, request data portability, and lodge complaints with applicable regulatory authorities. Requests may be sent to: privacy@scivyt.com",
+    },
+    {
+      title: "Children's Privacy",
+      content:
+        "SCIVYT does not knowingly collect data from individuals under 18 years of age without verified parental or institutional consent. If such data is identified, it will be promptly deleted.",
+    },
+    {
+      title: "Third-Party Links & Integrations",
+      content:
+        "SCIVYT platforms may contain links to external websites or partner platforms. We are not responsible for the privacy practices of third-party services. Users are advised to review their respective privacy policies.",
+    },
+    {
+      title: "Policy Updates & Modifications",
+      content:
+        "SCIVYT reserves the right to modify this Privacy Policy at any time. Changes will be posted on this page with an updated Last Updated date. Continued use of the platform constitutes acceptance of the revised policy.",
+    },
+    {
+      title: "Legal Compliance (India & Global)",
+      content:
+        "This Privacy Policy complies with the Information Technology Act, 2000 (India), IT Rules, 2011 (Reasonable Security Practices), GDPR (EU) where applicable, and global data protection best practices.",
+    },
+    {
+      title: "Contact for Privacy Concerns",
+      content:
+        "For privacy, data protection, or compliance inquiries, email privacy@scivyt.com or legal@scivyt.com. Registered Office: [Insert Official Address]",
     },
   ];
 
@@ -89,32 +144,7 @@ const TermsPage = () => {
       </main>
 
       {/* --- Contact Section --- */}
-      <section className="bg-white py-20 border-t border-gray-100 w-full">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-            {/* Left Column: CTA */}
-            <div className="lg:col-span-5 flex flex-col justify-center">
-              <span className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">
-                Contact Us
-              </span>
-              <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-6 leading-tight">
-                Have Questions About Our Terms?
-              </h2>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                Have questions about our terms or need further clarification?
-                Our team is here to help you understand our policies and how
-                they apply to you.
-              </p>
-            </div>
-
-            {/* Right Column: Form */}
-            <div className="lg:col-span-7">
-              <ContactForm />
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <ContactForm />
       {/* --- Footer --- */}
       <Footer />
     </div>

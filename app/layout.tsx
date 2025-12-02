@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "SCIVYT - Digital Innovation Partner",
   description:
     "Bring the capabilities of your large scale enterprise to the next level",
+  icons: {
+    icon: "/logo/favicon.png",
+  },
 };
 
 export default function RootLayout({

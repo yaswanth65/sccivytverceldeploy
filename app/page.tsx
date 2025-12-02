@@ -1,66 +1,69 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import CampaignSlider from "@/components/CampaignSlider";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
-const services = [
+const products = [
   {
     id: 1,
-    title: "Yetzu – Academic & Research Mentorship Platform",
-    category: "EDTECH",
+    slug: "yetzu",
+    title: "YETZU",
+    category: "Education & Research",
+    tagline: "Academic & Research Mentorship Platform",
     description:
-      "A comprehensive digital ecosystem that blends curriculum-based learning with expert-led mentorship.",
-    description2:
-      "Designed to build research skills, academic excellence, and publication readiness.",
+      "A unified digital ecosystem combining curriculum-based learning, live mentorship, and research training to produce ethical, independent, and publication-ready scholars.",
     image:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=675&h=900",
+      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=60&w=675&h=900",
   },
   {
     id: 2,
-    title: "NationCite – India's Research Impact Portal",
-    category: "EDTECH",
+    slug: "submit-right",
+    title: "SUBMITRIGHT",
+    category: "Research & Publishing",
+    tagline: "Academic Services Platform",
     description:
-      "A data-driven platform showcasing India's research output with real-time national rankings and analytics.",
-    description2:
-      "Built to enhance academic visibility, credibility, and research accountability.",
+      "End-to-end academic publication support including editing, translation, and journal submission management for global researchers and institutions.",
     image:
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=675&h=900",
+      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=60&w=675&h=900",
   },
   {
     id: 3,
-    title: "SubmitRight – Academic Services Platform",
-    category: "EDTECH",
+    slug: "vituor",
+    title: "VITUOR",
+    category: "Healthcare & Medical Research",
+    tagline: "Peer-Reviewed Medical Journal",
     description:
-      "A complete publication-support system offering editing, translation, and journal submission services.",
-    description2:
-      "Helping researchers publish confidently and efficiently with expert guidance.",
+      "An international open-access medical journal dedicated to publishing high-impact, ethically reviewed healthcare research.",
     image:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=675&h=900",
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=60&w=675&h=900",
   },
   {
     id: 4,
-    title: "Beentu AI – AI Academic Writing Assistant",
-    category: "EDTECH",
+    slug: "beentu-ai",
+    title: "BEENTU AI",
+    category: "Artificial Intelligence & Education",
+    tagline: "AI Academic Writing Assistant",
     description:
-      "An intelligent writing engine that enhances grammar, structure, and clarity for academic documents.",
-    description2:
-      "Designed to accelerate research writing and ensure publication-ready output.",
+      "An intelligent academic writing and review system that enhances clarity, structure, citation accuracy, and publication readiness.",
     image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=675&h=900",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=60&w=675&h=900",
   },
   {
     id: 5,
-    title: "lorem",
-    category: "EDTECH",
-    description: "lorerm.",
-    description2:
-      "Providing global researchers a trusted stage to publish impactful scientific work.",
+    slug: "nationcite",
+    title: "NATIONCITE",
+    category: "Research Analytics",
+    tagline: "India's Research Impact Portal",
+    description:
+      "India's national research visibility and analytics platform providing verified rankings, researcher profiles, and institutional performance insights.",
     image:
-      "https://images.unsplash.com/photo-1512941691920-25bdb67cbcb2?auto=format&fit=crop&q=80&w=675&h=900",
+      "https://images.unsplash.com/photo-1512941691920-25bdb67cbcb2?auto=format&fit=crop&q=60&w=675&h=900",
   },
 ];
 
@@ -135,72 +138,70 @@ export default function HomePage() {
         <section className="relative w-full h-screen overflow-hidden bg-gray-900 text-white font-sans">
           {/* 1. Background Image */}
           <div className="absolute inset-0 z-0">
-            <img
-              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop"
+            <Image
+              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=60&w=2071&auto=format&fit=crop"
               alt="Background"
-              className="w-full h-full object-cover opacity-70"
+              fill
+              className="object-cover opacity-70"
+              quality={60}
             />
-            {/* Dark overlay */}
             <div className="absolute inset-0 bg-black/30" />
           </div>
 
           {/* 3. Main Content */}
-          <div className="relative z-10 h-full flex flex-col justify-center w-full px-6 md:px-8 mt-16">
-            <div className="max-w-7xl mx-auto w-full">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+          {/* Note: lg:px-[130px] ensures 130px from left & right edges at large screens */}
+          <div className="relative z-10 h-full flex flex-col justify-center w-full px-6 md:px-8 lg:px-[130px] mt-16">
+            {/* remove mx-auto so padding is always measured from viewport edges */}
+            <div className="w-full">
+              {/* use lg:flex-row + lg:gap-24 to increase horizontal gap on large screens */}
+              <div className="flex flex-col lg:flex-row items-start lg:pt-20 lg:gap-24">
                 {/* Left Column */}
-                <div className="space-y-4">
-                  <h1 className="font-serif text-hero text-[#F4F3EA] max-w-[847px]">
-                    Lorem Ipsum <br />
-                    Lorem <br />
-                    Lorem Ipsum
+                <div className="space-y-4 self-start w-full lg:w-[45%]">
+                  <h1
+                    className="font-serif text-[#F4F3EA] leading-tight 
+                       text-3xl md:text-5xl lg:text-[64px]
+                       text-center lg:text-left"
+                  >
+                    <span className="block whitespace-nowrap">
+                      Shaping the Future of
+                    </span>
+                    <span className="block whitespace-nowrap">
+                      Education &amp; Research
+                    </span>
+                    <span className="block whitespace-nowrap">
+                      Through Technology
+                    </span>
                   </h1>
                 </div>
 
                 {/* Right Column */}
-                <div className="space-y-8 lg:pl-16 lg:flex lg:flex-col lg:items-end lg:text-right">
-                  {/* Text */}
-                  <p className="text-lead text-white/85 max-w-sm">
-                    SCIVYT empowers learners, educators, and researchers with
-                    advanced digital platforms that bridge academic knowledge
-                    with real-world impact.
+                <div className="space-y-8 mt-8 lg:mt-0 lg:flex lg:flex-col lg:items-end lg:text-right self-start w-full lg:w-[45%]">
+                  <p className="text-lead text-white/85 max-w-sm mx-auto lg:mx-0">
+                    SCIVYT builds advanced digital ecosystems that empower
+                    learners, educators, and researchers with scalable,
+                    AI-driven tools for real-world academic and scientific
+                    impact.
                   </p>
 
-                  {/* CTAs */}
-                  <div className="flex items-center gap-4">
-                    {/* View Products */}
-                    <button
-                      className="inline-flex items-center justify-center bg-white text-black 
-                 px-9 py-3 rounded-full font-medium text-sm
-                 shadow-lg shadow-black/40
-                 hover:bg-white/90 transition"
-                    >
-                      View Products
+                  <div className="flex items-center gap-4 justify-center lg:justify-end">
+                    <button className="inline-flex items-center justify-center bg-white text-black px-5 py-3 rounded-full font-medium text-sm shadow-lg shadow-black/40 hover:bg-white/90 transition">
+                      Explore Our Solutions
                     </button>
 
-                    {/* Book a call */}
-                    <button
-                      className="group inline-flex items-center gap-3 
-                 bg-black/70 backdrop-blur-sm
-                 border border-white/15
-                 pl-2.5 pr-7 py-2.5
-                 rounded-full
-                 shadow-lg shadow-black/50
-                 hover:bg-black/90 transition cursor-pointer"
-                    >
-                      <div className="relative flex-shrink-0">
-                        <img
-                          src="https://randomuser.me/api/portraits/men/32.jpg"
+                    <button className="group inline-flex items-center gap-3 bg-black/70 backdrop-blur-sm border border-white/15 pl-2.5 pr-3 py-2 rounded-full shadow-lg shadow-black/50 hover:bg-black/90 transition cursor-pointer">
+                      <div className="relative flex-shrink-0 overflow-hidden">
+                        <Image
+                          src="/team/Dr. Yethindra Vityala 2.JPG"
                           alt="Agent"
-                          className="w-9 h-9 rounded-full border-2 border-white/80"
+                          width={28}
+                          height={28}
+                          className="rounded-full border-2 border-white/80 object-cover object-center"
+                          quality={60}
                         />
-                        <span
-                          className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 
-                     border-2 border-black rounded-full"
-                        />
+                        <span className="absolute bottom-0 right-0 w-2 h-2 bg-green-500 border-2 border-black rounded-full" />
                       </div>
                       <span className="text-sm text-white font-medium">
-                        Book a call
+                        Partner With Us
                       </span>
                     </button>
                   </div>
@@ -215,22 +216,45 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <h2 className="text-section font-serif mb-8 text-slate-900">
-                Bring the capabilities of your large scale enterprise to the
-                next level.
+                Where Knowledge Meets Intelligent Systems
               </h2>
               <p className="text-slate-500 text-body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                penatibus et magnis dis parturient montes.
+                SCIVYT is a global education and research technology
+                organization dedicated to transforming how knowledge is created,
+                shared, and applied. We bridge the gap between learning,
+                research, and real-world outcomes through intelligent platforms
+                built for scale, precision, and accessibility.
               </p>
 
               <div className="flex justify-center items-center mt-10 -space-x-4">
-                {[1, 2, 3, 4, 5].map((i) => (
+                {[
+                  "/team/Dr. Yethindra Vityala 2.JPG",
+                  "/team/Dr. Tugolbai Tagaev.JPG",
+                  "/team/Srilaxmi Vityala.JPG",
+                  "/team/Dr. Altynai Zhumbekova.JPG",
+                  "/team/Dr. Krishna Priya Kanteti.jpg",
+                  "/team/Dr. Ujwala Damineni.jpg",
+                  "/team/Sravya Gatta.jpg",
+                  "/team/vinay devarakonda.jpg",
+                ].map((img, i) => (
                   <div
                     key={i}
-                    className="w-12 h-12 rounded-full border-2 border-white bg-gray-200 overflow-hidden"
+                    className={`w-12 h-12 rounded-full border-2 border-white bg-gray-200 overflow-hidden ${
+                      i === 3 ? "z-20" : "z-10"
+                    }`}
                   >
-                    <div className="w-full h-full bg-gray-300"></div>
+                    <Image
+                      src={img}
+                      alt={`Team member ${i + 1}`}
+                      width={48}
+                      height={48}
+                      className={`object-cover w-full h-full ${
+                        i === 3
+                          ? "scale-150  translate-y-2"
+                          : "object-center"
+                      }`}
+                      quality={60}
+                    />
                   </div>
                 ))}
               </div>
@@ -253,11 +277,15 @@ export default function HomePage() {
 
         {/* Dark Services Section */}
         <section className="bg-[#0a0a0a] text-white py-24 md:py-32 relative w-full">
-          <div className="mb-12 text-center px-4 sm:px-6 md:px-[72px] w-full pb-1">
-                  <h2 className="text-section font-serif mb-8">
-                   Innovative Solutions for Modern <br /> Academic & Research Challenges
-                  </h2>
+          <div
+            className="mb-12 text-center px-4 sm:px-6 md:px-[72px] w-full pb-1 
+                lg:ml-[22%] lg:text-left"
+          >
+            <h2 className="text-section font-serif">
+              Integrated Platforms for Academic <br /> Research Excellence
+            </h2>
           </div>
+
           <div className="px-4 sm:px-6 md:px-[72px] w-full">
             <div className="flex flex-col lg:flex-row gap-12">
               {/* Sticky Sidebar (Desktop Only) */}
@@ -267,17 +295,17 @@ export default function HomePage() {
                     Our Products
                   </div>
                   <ul className="space-y-6 text-2xl font-light text-gray-600">
-                    {services.map((service) => (
+                    {products.map((product) => (
                       <li
-                        key={service.id}
-                        onClick={() => scrollToService(service.id)}
+                        key={product.id}
+                        onClick={() => scrollToService(product.id)}
                         className={`cursor-pointer transition-all duration-300 ${
-                          activeService === service.id
+                          activeService === product.id
                             ? "text-white scale-105 origin-left"
                             : "hover:text-gray-400"
                         }`}
                       >
-                        {service.title.split(" – ")[0]}
+                        {product.title}
                       </li>
                     ))}
                   </ul>
@@ -286,37 +314,51 @@ export default function HomePage() {
 
               {/* Vertical Stack (Mobile & Desktop Content) */}
               <div className="lg:w-3/4 space-y-32">
-                {services.map((service, index) => (
+                {products.map((product) => (
                   <div
-                    key={service.id}
+                    key={product.id}
                     ref={(el) => {
-                      if (el) serviceRefs.current[service.id] = el;
+                      if (el) serviceRefs.current[product.id] = el;
                     }}
-                    data-id={service.id}
+                    data-id={product.id}
                     className="group scroll-mt-20 cursor-pointer"
                   >
                     <div className="flex flex-col md:flex-row gap-8 items-start">
-                      <div className="w-full md:w-1/2 overflow-hidden rounded-sm">
-                        <img
-                          src={service.image}
-                          alt={service.title}
+                      <div className="relative w-full md:w-1/2 overflow-hidden rounded-sm">
+                        <Image
+                          src={product.image}
+                          alt={product.title}
+                          width={675}
+                          height={900}
                           className="w-full aspect-[3/4] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                          quality={60}
                         />
                       </div>
                       <div className="w-full md:w-1/2">
                         <div className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-4 flex items-center gap-2">
                           <span className="w-1.5 h-1.5 bg-white rounded-full"></span>
-                          {service.category}
+                          {product.category}
                         </div>
-                        <h3 className="text-card font-light font-serif mb-6 max-w-lg">
-                          {service.title}
-                        </h3>
-                        <p className="text-gray-400 mb-4 max-w-[330px] text-body">
-                          {service.description}
-                        </p>
+                        <div className="mb-6">
+                          <h3 className="text-card font-light font-serif inline max-w-lg">
+                            {product.title}
+                          </h3>
+                          <span className="text-gray-400 ml-3 text-base font-serif font-light inline">
+                            {product.tagline}
+                          </span>
+                        </div>
                         <p className="text-gray-400 mb-8 max-w-[330px] text-body">
-                          {service.description2}
+                          {product.description}
                         </p>
+                        <Link
+                          href={`/products/${product.slug}`}
+                          className="inline-flex items-center gap-2 text-white hover:text-gray-300 transition group"
+                        >
+                          <span className="text-sm font-medium">
+                            Learn More
+                          </span>
+                          <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition" />
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -326,52 +368,73 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Stats Section */}
+        {/* About Us Section */}
         <section className="py-24 bg-white text-slate-900 w-full">
           <div className="px-4 sm:px-6 md:px-[72px] w-full">
             <div className="grid md:grid-cols-2 gap-16 items-center">
+              {/* Left Content */}
               <div>
-                <div className="mb-12">
-                  <h2 className="text-section font-serif mb-8">
-                    Measuring success by results, not just effort.
+                <div className="mb-16">
+                  {/* About Label */}
+                  <div className="text-xs uppercase tracking-widest text-gray-500 font-bold mb-6 flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 bg-black rounded-full"></span>
+                    ABOUT US
+                  </div>
+
+                  {/* Heading */}
+                  <h2 className="text-4xl md:text-5xl font-serif leading-[1.15] mb-10">
+                    Building the Future of <br />
+                    Learning, Research & <br />
+                    Innovation
                   </h2>
-                  <p className="text-slate-500 text-body mb-8">
-                    We believe in transparency and measurable outcomes. Our
-                    track record speaks for itself, delivering consistent value
-                    across industries and borders.
-                  </p>
+
+                  {/* Note: Description paragraph removed to match screenshot */}
+
+                  {/* Pill Button */}
                   <a
                     href="#"
-                    className="inline-flex items-center gap-2 text-black font-semibold border-b-2 border-black pb-1 hover:opacity-70 transition"
+                    className="inline-flex items-center justify-between gap-3 border border-gray-200 rounded-full pl-6 pr-2 py-2 hover:border-gray-400 transition group"
                   >
-                    Read our impact report <ArrowRight size={16} />
+                    <span className="text-sm font-semibold text-black">
+                      Learn More About SCIVYT
+                    </span>
+                    <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center group-hover:bg-gray-300 transition">
+                      <ArrowRight className="w-4 h-4 text-gray-600" />
+                    </div>
                   </a>
                 </div>
 
+                {/* Stats Section */}
                 <div className="grid grid-cols-2 gap-12">
-                  <div className="border-l-2 border-slate-200 pl-6">
-                    <div className="text-subhead font-serif mb-2">50+</div>
-                    <div className="text-caption font-bold uppercase tracking-widest text-slate-400">
-                      Global Clients
+                  <div className="">
+                    <div className="text-4xl md:text-5xl font-serif mb-3">
+                      120+
+                    </div>
+                    <div className="text-sm font-medium leading-relaxed text-slate-800 max-w-[180px]">
+                      Global Academic & Institutional Collaborations
                     </div>
                   </div>
-                  <div className="border-l-2 border-slate-200 pl-6">
-                    <div className="text-subhead font-serif mb-2">1.5k+</div>
-                    <div className="text-caption font-bold uppercase tracking-widest text-slate-400">
-                      Projects Delivered
+                  <div className="">
+                    <div className="text-4xl md:text-5xl font-serif mb-3">
+                      50,000+
+                    </div>
+                    <div className="text-sm font-medium leading-relaxed text-slate-800 max-w-[180px]">
+                      Learners & Researchers Supported
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Stats Visual/Image */}
-              <div className="h-[500px] md:h-[600px] bg-gray-100 rounded-2xl overflow-hidden relative shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
-                  alt="Stats Graph"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-slate-900/10"></div>
+              {/* Right Visual/Image */}
+              {/* Using bg-gray-200 to match the screenshot placeholder, or keep the image if preferred */}
+              <div className="h-[500px] md:h-[600px] bg-gray-200 rounded-lg overflow-hidden relative">
+                {/* If you want the actual image back, uncomment below: */}
+                {/* <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+              alt="About SCIVYT"
+              className="w-full h-full object-cover grayscale opacity-50"
+            /> 
+            */}
               </div>
             </div>
           </div>
@@ -381,33 +444,7 @@ export default function HomePage() {
         <CampaignSlider />
 
         {/* Contact Section */}
-        <section className="bg-white py-24 w-full">
-          <div className="px-4 sm:px-6 md:px-[72px] w-full">
-            <div className="grid lg:grid-cols-2 gap-16">
-              <div>
-                <h2 className="text-section font-serif mb-8 text-slate-900">
-                  Lorem ipsum dolor sit amet consectetur
-                </h2>
-                <p className="text-slate-500 text-body mb-12 max-w-md">
-                  We are always looking for new challenges and interesting
-                  partners. Also, we love good coffee.
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4 text-slate-800">
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
-                    <span>hello@brandname.com</span>
-                  </div>
-                  <div className="flex items-center gap-4 text-slate-800">
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
-                    <span>+1 (555) 123-4567</span>
-                  </div>
-                </div>
-              </div>
-
-              <ContactForm />
-            </div>
-          </div>
-        </section>
+        <ContactForm />
       </main>
 
       <Footer />

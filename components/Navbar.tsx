@@ -17,7 +17,7 @@ export default function Navbar({
 }: NavbarProps) {
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 flex flex-row justify-between items-center px-4 md:px-8 py-2 gap-4 md:gap-[330px]"
+      className="fixed top-0 left-0 right-0 z-50 flex flex-row justify-between items-center px-4 md:px-8 py-2 gap-4"
       style={{
         height: "67px",
         background: "rgba(230, 232, 221, 0.38)",
@@ -28,35 +28,23 @@ export default function Navbar({
       }}
     >
       {/* Logo Container */}
-      <div className="flex flex-row items-center gap-2.5 flex-none">
+      <div className="flex flex-row items-center flex-none h-full">
         {/* Logo Image */}
-        <div
-          className="flex-none"
+        <img
+          src="/logo/Scivyt without Tagline PNG.png"
+          alt="SCIVYT Logo"
+          className="flex-none h-full w-auto"
           style={{
-            width: "24px",
-            height: "24px",
-            background: "#1A1A17",
+            objectFit: "contain",
           }}
         />
-        {/* Logo Text */}
-        <span
-          className="font-inter font-normal text-2xl leading-150 tracking-tighter flex-none"
-          style={{
-            width: "56px",
-            height: "36px",
-            color: "#1A1A17",
-            letterSpacing: "-0.02em",
-          }}
-        >
-          BRAND
-        </span>
       </div>
 
       {/* Desktop Menu */}
       <div
-        className="hidden md:flex flex-row items-center gap-6 flex-none"
+        className="hidden md:flex flex-row items-center gap-6 flex-none ml-auto"
         style={{
-          width: "454px",
+          width: "auto",
           height: "51px",
         }}
       >
@@ -107,27 +95,12 @@ export default function Navbar({
         >
           About
         </Link>
-
-        {/* Menu 04 */}
-        <button
-          className="flex flex-row justify-center items-center px-4 py-3 gap-2.5 flex-none hover:opacity-70 transition-opacity"
-          style={{
-            width: "95.5px",
-            height: "51px",
-            fontSize: "18px",
-            color: "#1A1A17",
-            fontFamily: "Inter",
-            letterSpacing: "-0.02em",
-          }}
-        >
-          Insights
-        </button>
       </div>
 
       {/* CTA Button */}
       <Link
         href="/contact"
-        className="hidden md:flex flex-row justify-end items-center px-4 py-2 flex-none hover:opacity-90 transition-opacity"
+        className="hidden md:flex flex-row justify-center items-center px-4 py-2 flex-none hover:opacity-90 transition-opacity"
         style={{
           width: "125px",
           height: "43px",

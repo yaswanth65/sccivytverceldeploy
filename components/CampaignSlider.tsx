@@ -20,7 +20,8 @@ const campaigns = [
     company: "INNOVATE CORP",
     founder: "Sarah Chen",
     role: "CEO of Innovate",
-    title: "Revolutionizing Digital Payments Securely",
+     title:
+      "Driving Academic Impact Through Innovation, Clarity & Collaboration",
     description:
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
     outcome: "94%",
@@ -32,7 +33,8 @@ const campaigns = [
     company: "ECO SYSTEMS",
     founder: "James Wilson",
     role: "Director of Sustainability",
-    title: "Green Energy for Tomorrow's World",
+      title:
+      "Driving Academic Impact Through Innovation, Clarity & Collaboration",
     description:
       "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
     outcome: "76%",
@@ -44,7 +46,8 @@ const campaigns = [
     company: "FUTURE LABS",
     founder: "Elena Rodriguez",
     role: "Head of Research",
-    title: "AI in Modern Healthcare Solutions",
+     title:
+      "Driving Academic Impact Through Innovation, Clarity & Collaboration",
     description:
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
     outcome: "88%",

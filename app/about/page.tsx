@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
@@ -138,14 +139,64 @@ export default function AboutPage() {
             </h2>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((member) => (
-                <div key={member} className="group">
-                  <div className="bg-gray-100 aspect-[3/4] mb-4 overflow-hidden rounded-sm">
-                    <div className="w-full h-full bg-gray-200 grayscale group-hover:grayscale-0 transition-all duration-500"></div>
+              {[
+                {
+                  image: "/team/Dr. Yethindra Vityala 2.JPG",
+                  name: "Dr. Yethindra",
+                  title: "Founder and Chief Executive Officer",
+                },
+                {
+                  image: "/team/Dr. Tugolbai Tagaev.JPG",
+                  name: "Dr. Tugolbai Tagaev",
+                  title: "Chairman and Director of Kyrgyzstan Operations",
+                },
+                {
+                  image: "/team/Srilaxmi Vityala.JPG",
+                  name: "Srilaxmi Vityala",
+                  title:
+                    "Co-Founder and Director of Academic and Research Partnerships",
+                },
+                {
+                  image: "/team/Dr. Altynai Zhumbekova.JPG",
+                  name: "Dr. Altynai Zhumbekova",
+                  title: "President and Director of United States Operations",
+                },
+                {
+                  image: "/team/Dr. Krishna Priya Kanteti.jpg",
+                  name: "Dr. Krishna Priya Kanteti",
+                  title:
+                    "Co-Founder, Director, Academic and Research Relations",
+                },
+                {
+                  image: "/team/Dr. Ujwala Damineni.jpg",
+                  name: "Dr. Ujwala Damineni",
+                  title:
+                    "President, Director of Academic and Publisher Partnerships",
+                },
+                {
+                  image: "/team/Sravya Gatta.jpg",
+                  name: "Sravya Gatta",
+                  title: "President, Technical and Product Head",
+                },
+                {
+                  image: "/team/Vinay Devarakonda.jpg",
+                  name: "Vinay Deverakonda",
+                  title: "President of Global Sales and Partnerships",
+                },
+              ].map((member, idx) => (
+                <div key={idx} className="group">
+                  <div className="relative bg-gray-100 aspect-[3/4] mb-4 overflow-hidden rounded-sm">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                      quality={60}
+                    />
                   </div>
-                  <h3 className="font-serif text-lg">Full Name</h3>
+                  <h3 className="font-serif text-lg">{member.name}</h3>
                   <p className="text-xs uppercase tracking-wider text-gray-500">
-                    Position Title
+                    {member.title}
                   </p>
                 </div>
               ))}
