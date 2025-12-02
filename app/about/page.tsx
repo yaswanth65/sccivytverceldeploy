@@ -364,33 +364,7 @@ export default function AboutPage() {
         </section>
 
         {/* Contact Section */}
-        <section className="bg-white py-24 w-full">
-          <div className="px-4 sm:px-6 md:px-[72px] w-full">
-            <div className="grid lg:grid-cols-2 gap-16">
-              <div>
-                <h2 className="text-4xl md:text-6xl font-serif mb-8 text-slate-900">
-                  Let's work together
-                </h2>
-                <p className="text-slate-500 text-lg mb-12 max-w-md">
-                  We are always looking for new challenges and interesting
-                  partners. Also, we love good coffee.
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4 text-slate-800">
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
-                    <span>hello@brandname.com</span>
-                  </div>
-                  <div className="flex items-center gap-4 text-slate-800">
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
-                    <span>+1 (555) 123-4567</span>
-                  </div>
-                </div>
-              </div>
-
-              <ContactForm />
-            </div>
-          </div>
-        </section>
+   <ContactForm />
       </main>
 
       <Footer />

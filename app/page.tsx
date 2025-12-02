@@ -235,7 +235,7 @@ export default function HomePage() {
                   "/team/Dr. Krishna Priya Kanteti.jpg",
                   "/team/Dr. Ujwala Damineni.jpg",
                   "/team/Sravya Gatta.jpg",
-                  "/team/vinay devarakonda.jpg",
+                  "/team/Vinay Devarakonda.jpg",
                 ].map((img, i) => (
                   <div
                     key={i}
