@@ -34,18 +34,23 @@ export default function ContactPage() {
           <div className="px-4 sm:px-6 md:px-[72px] w-full">
             <div className="text-center max-w-4xl mx-auto mb-16">
               <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">
-                Contact Us
+                Let's Connect
               </div>
-              <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-16 text-slate-900">
-                Lorem ipsum dolor sit amet, consectetur adipiscing Lorem ipsum
+              <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-6 text-slate-900">
+                Start the Conversation That Builds What's Next
               </h1>
+              <p className="text-slate-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-16">
+                Whether you have a question, a collaboration idea, or need
+                expert guidance, our team is here to listen, respond, and
+                support you with clarity and intent.
+              </p>
 
               <div className="grid md:grid-cols-2 gap-6">
-                {/* Email Card 1 */}
+                {/* Email Card */}
                 <div className="bg-[#EFEFEA] p-8 rounded-lg text-left relative aspect-[4/3] flex flex-col justify-between group cursor-pointer hover:bg-[#e5e5e0] transition-colors">
                   <div className="flex justify-between items-start">
                     <span className="text-xs font-bold uppercase tracking-widest text-gray-500">
-                      General Enquiries
+                      Write to Us
                     </span>
                     <div className="w-8 h-8 bg-black rounded-sm flex items-center justify-center text-white">
                       <ArrowUpRight size={18} />
@@ -53,19 +58,20 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-xl md:text-2xl font-bold mb-2">
-                      SCIVYT@EMAIL.COM
+                      support@scivyt.com
                     </h3>
                     <p className="text-gray-500 text-sm max-w-xs">
-                      Questions, thoughts, or just want to connect?
+                      For partnerships, support, and detailed inquiries drop us
+                      an email and we'll respond promptly.
                     </p>
                   </div>
                 </div>
 
-                {/* Email Card 2 */}
+                {/* Phone Card */}
                 <div className="bg-[#EFEFEA] p-8 rounded-lg text-left relative aspect-[4/3] flex flex-col justify-between group cursor-pointer hover:bg-[#e5e5e0] transition-colors">
                   <div className="flex justify-between items-start">
                     <span className="text-xs font-bold uppercase tracking-widest text-gray-500">
-                      General Enquiries
+                      Call Us
                     </span>
                     <div className="w-8 h-8 bg-black rounded-sm flex items-center justify-center text-white">
                       <ArrowUpRight size={18} />
@@ -73,10 +79,11 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-xl md:text-2xl font-bold mb-2">
-                      SCIVYT@EMAIL.COM
+                      +91 123456789
                     </h3>
                     <p className="text-gray-500 text-sm max-w-xs">
-                      Questions, thoughts, or just want to connect?
+                      For direct conversations and quick assistance, our team is
+                      just a call away.
                     </p>
                   </div>
                 </div>
@@ -98,9 +105,9 @@ export default function ContactPage() {
               </p>
 
               <h3 className="text-xl font-bold mb-6">
-                Lorem Ipsum Kompally
-                <br />
-                Ramnagar Hyderabad
+                Plot 1-98/4/1-13, Unit 602A, 6th Floor, Capital Park,
+                Image Garden Road, Madhapur,
+Hyderabad , Telangana, India.
               </h3>
 
               <button className="flex items-center gap-3 text-sm font-bold uppercase tracking-wider group">
@@ -114,8 +121,7 @@ export default function ContactPage() {
         </section>
 
         {/* Form Section */}
-                    <ContactForm />
-
+        <ContactForm />
       </main>
 
       <Footer />

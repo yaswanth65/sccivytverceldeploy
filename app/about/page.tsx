@@ -73,16 +73,20 @@ export default function AboutPage() {
           <div className="flex-1 flex flex-col w-full px-6 md:px-8 py-6">
             <div className="max-w-4xl mx-auto w-full text-center mb-6">
               <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">
-                About Us
+                Our Story
               </div>
 
               <h1 className="text-4xl md:text-6xl font-serif leading-tight mb-4 text-slate-900">
-                Lorem ipsum dolor sit amet, consectetur adipiscing Lorem ipsum
+                Building the Global Infrastructure for Knowledge
               </h1>
 
               <p className="text-slate-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium.
+                SCIVYT is a global education and research technology
+                organization dedicated to redefining how knowledge is created,
+                shared, and applied. By integrating human expertise with
+                intelligent digital systems, we empower learners, educators, and
+                researchers to achieve real-world academic and scientific impact
+                at scale.
               </p>
             </div>
 
@@ -213,14 +217,13 @@ export default function AboutPage() {
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
                   <span className="text-xs font-bold uppercase tracking-widest text-gray-500">
-                    Selling Points
+                    Our Journey
                   </span>
                 </div>
-                <h2 className="text-4xl md:text-6xl font-serif leading-tight text-gray-900">
-                  Progress built <br /> year by year
-                </h2>
+                <h3 className="text-lg sm:text-xl md:text-[38px] font-serif text-gray-900 leading-[1.3] sm:leading-[1.35] md:leading-[1.4]">
+                  A Decade of Building the Future of Education & Research
+                </h3>
               </div>
-
               {/* Right Column: Timeline Items */}
               <div className="relative pr-[72px]">
                 {/* Vertical Line */}
@@ -295,17 +298,13 @@ export default function AboutPage() {
           <div className="px-4 sm:px-6 md:px-[72px] w-full flex justify-center items-center flex-col">
             <div className="max-w-4xl">
               <h2 className="text-3xl md:text-5xl font-serif leading-tight text-slate-900 mb-12">
-                Lorem ipsum dolor sit amet, consectetur adipiscing Lorem ipsum
+                A Vision Rooted in Purpose, Built Through Technology
               </h2>
-              <div className="flex flex-col items-center justify-center gap-4">
-                <div className="w-16 h-16 bg-gray-200 rounded-full overflow-hidden"></div>
-                <div>
-                  <div className="font-bold text-sm">Jonathan Smith</div>
-                  <div className="text-gray-500 text-xs uppercase tracking-widest">
-                    Founder & CEO
-                  </div>
-                </div>
-              </div>
+              <p className="text-slate-500 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+                SCIVYT was founded with the belief that education and research
+                should not be limited by geography, systems, or resources only
+                by imagination and integrity.
+              </p>
             </div>
           </div>
         </section>
@@ -319,11 +318,12 @@ export default function AboutPage() {
             {/* Left */}
             <div className="flex-1">
               <h2 className="text-4xl md:text-6xl font-serif mb-6">
-                Lorem ipsum dolor sit amet
+                Measurable Impact. Global Reach.
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed mb-12 max-w-lg">
-                Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua.
+                Our growth is defined not just by scale, but by the communities
+                we empower, the research we accelerate, and the institutions
+                that trust our platforms worldwide.
               </p>
             </div>
 
@@ -331,20 +331,20 @@ export default function AboutPage() {
             <div className="flex-1 grid grid-cols-2 gap-16 self-start">
               {[
                 {
-                  label: "Happy Students after taking session with us",
-                  val: "1500+",
+                  label: "Learners & Researchers Empowered",
+                  val: "50,000+",
                 },
                 {
-                  label: "Happy Students after taking session with us",
-                  val: "1500+",
+                  label: "Institutional & Academic Collaborations",
+                  val: "120+",
                 },
                 {
-                  label: "Happy Students after taking session with us",
-                  val: "1500+",
+                  label: "Integrated Education & Research Products",
+                  val: "6",
                 },
                 {
-                  label: "Happy Students after taking session with us",
-                  val: "1500+",
+                  label: "Global Operational Regions",
+                  val: "3+",
                 },
               ].map((stat, idx) => (
                 <div
@@ -364,7 +364,7 @@ export default function AboutPage() {
         </section>
 
         {/* Contact Section */}
-   <ContactForm />
+        <ContactForm />
       </main>
 
       <Footer />

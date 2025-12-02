@@ -65,8 +65,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/terms" className="hover:text-white">
-                  Terms and Conditions
+                <a href="/privacy-policy" className="hover:text-white">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="/terms-and-conditions" className="hover:text-white">
+                  Terms & Conditions
                 </a>
               </li>
             </ul>
@@ -105,12 +110,11 @@ export default function Footer() {
               Office
             </h4>
             <p className="text-gray-300 mb-4">
-             Plot 1-98/4/1-13, Unit 602A, 6th Floor, Capital Park, 
+              Plot 1-98/4/1-13, Unit 602A, 6th Floor, Capital Park,
               <br />
-            Image
-Garden Road, Madhapur,
+              Image Garden Road, Madhapur,
               <br />
-             Hyderabad 500081, Telangana, India.
+              Hyderabad 500081, Telangana, India.
             </p>
             <p className="text-gray-500 text-sm">
               © 2025 SCIVYT.
